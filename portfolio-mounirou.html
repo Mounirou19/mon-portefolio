@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mounirou — Développeur full-stack, landing pages & tuyauterie de leads</title>
+<meta name="description" content="Je construis des landing pages qui convertissent et la tuyauterie qui livre les leads chez vous : API, SFTP, automatisation n8n. Freelance en Île-de-France.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ---------- tokens ---------- */
+:root{
+  --paper:#EDF1F5;
+  --surface:#FFFFFF;
+  --ink:#16233A;
+  --ink-soft:#4C5C74;
+  --line:#C8D2DD;
+  --live:#12855A;      /* état : livré */
+  --pending:#B87514;   /* état : en attente */
+  --hot:#D6294B;       /* état : erreur / rejet */
+
+  --display:"Bricolage Grotesque",Georgia,serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+
+  --max:1120px;
+  --gut:clamp(20px,5vw,64px);
+  --r:4px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:clamp(15px,.4vw + 14px,17px);line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--ink);outline-offset:3px}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gut)}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.02;letter-spacing:-.02em;margin:0}
+h2{font-size:clamp(28px,4.4vw,44px)}
+h3{font-size:clamp(19px,2vw,23px);font-weight:600;letter-spacing:-.01em}
+p{margin:0 0 1rem;max-width:66ch}
+.muted{color:var(--ink-soft)}
+
+/* ---------- header ---------- */
+.top{
+  position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+}
+.top .wrap{display:flex;align-items:center;gap:16px;min-height:62px}
+.mark{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.02em;text-decoration:none;margin-right:auto}
+.mark span{color:var(--live)}
+.nav{display:flex;gap:22px}
+.nav a{text-decoration:none;font-size:14.5px;color:var(--ink-soft);padding:6px 0;border-bottom:1.5px solid transparent}
+.nav a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:var(--r);padding:8px 10px;font:inherit;font-size:14px;cursor:pointer}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(48px,8vw,96px) 0 clamp(36px,5vw,56px)}
+.hero h1{font-size:clamp(38px,7.6vw,76px);max-width:19ch}
+.hero .lede{font-size:clamp(17px,1.1vw + 14px,21px);margin-top:22px;max-width:52ch;color:var(--ink-soft)}
+.status{
+  display:inline-flex;align-items:center;gap:9px;font-size:14px;
+  border:1px solid var(--line);background:var(--surface);border-radius:100px;padding:6px 14px 6px 11px;margin-bottom:26px;
+}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--live);box-shadow:0 0 0 4px color-mix(in srgb,var(--live) 18%,transparent)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{
+  font:inherit;font-weight:600;font-size:15px;text-decoration:none;cursor:pointer;
+  padding:13px 20px;border-radius:var(--r);border:1.5px solid var(--ink);
+  background:var(--ink);color:#fff;transition:transform .12s ease,background .15s ease;
+}
+.btn:hover{background:#0B1526}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--surface)}
+
+/* ---------- pipeline (pièce maîtresse) ---------- */
+.pipe-block{border-top:1px solid var(--line);padding:clamp(32px,5vw,56px) 0}
+.pipe-intro{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:28px}
+.pipe-intro p{margin:0;font-size:15px}
+.pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.node{
+  position:relative;background:var(--surface);border:1px solid var(--line);border-right:none;
+  padding:18px 16px 20px;text-align:left;font:inherit;cursor:pointer;
+  transition:background .15s ease;
+}
+.node:first-child{border-radius:var(--r) 0 0 var(--r)}
+.node:last-child{border-right:1px solid var(--line);border-radius:0 var(--r) var(--r) 0}
+.node:hover{background:#F7FAFC}
+.node[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.node[aria-selected="true"] .n-sub{color:#A9BBD3}
+.n-step{font-family:var(--mono);font-size:12px;opacity:.7;display:block;margin-bottom:8px}
+.n-name{font-family:var(--display);font-weight:600;font-size:clamp(15px,1.4vw,18px);display:block}
+.n-sub{font-size:13px;color:var(--ink-soft);margin-top:4px;display:block}
+/* rail + paquets de données */
+.rail{position:relative;height:34px;margin:0 2px;overflow:hidden}
+.rail::before{content:"";position:absolute;top:50%;left:6%;right:6%;height:1.5px;background:var(--line)}
+.packet{
+  position:absolute;top:50%;left:6%;width:9px;height:9px;margin-top:-4.5px;border-radius:2px;
+  background:var(--live);opacity:0;
+}
+.running .packet{animation:slide 3.4s linear infinite}
+.packet:nth-child(2){animation-delay:1.1s}
+.packet:nth-child(3){animation-delay:2.2s;background:var(--pending)}
+@keyframes slide{
+  0%{transform:translateX(0);opacity:0}
+  8%{opacity:1}
+  92%{opacity:1}
+  100%{transform:translateX(calc(88vw - 40px));opacity:0}
+}
+.detail{
+  background:var(--surface);border:1px solid var(--line);border-top:none;border-radius:0 0 var(--r) var(--r);
+  padding:22px clamp(16px,3vw,26px);display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(18px,3vw,34px);
+}
+.detail h3{margin-bottom:8px}
+.detail p{font-size:15px;margin-bottom:0}
+.detail ul{margin:12px 0 0;padding-left:18px;font-size:14.5px;color:var(--ink-soft)}
+.detail li{margin-bottom:5px}
+pre{
+  margin:0;background:#0F1A2B;color:#D8E3F2;border-radius:var(--r);
+  padding:16px;overflow-x:auto;font-family:var(--mono);font-size:12.5px;line-height:1.65;
+}
+pre .k{color:#7FD1A8}.pre-cap{font-size:13px;color:var(--ink-soft);margin:0 0 8px}
+
+/* ---------- offres ---------- */
+.sec{border-top:1px solid var(--line);padding:clamp(48px,7vw,84px) 0}
+.sec-head{max-width:60ch;margin-bottom:clamp(28px,4vw,44px)}
+.sec-head p{margin-top:14px;color:var(--ink-soft)}
+.offers{border-top:1px solid var(--line)}
+.offer{
+  display:grid;grid-template-columns:auto 1fr auto;gap:clamp(14px,3vw,40px);align-items:start;
+  padding:26px 0;border-bottom:1px solid var(--line);
+}
+.offer-i{font-family:var(--mono);font-size:13px;color:var(--ink-soft);padding-top:5px}
+.offer p{margin:8px 0 0;font-size:15px;color:var(--ink-soft);max-width:56ch}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{font-size:12.5px;font-family:var(--mono);border:1px solid var(--line);border-radius:100px;padding:3px 9px;color:var(--ink-soft)}
+.price{font-family:var(--display);font-size:16px;font-weight:600;white-space:nowrap;padding-top:3px}
+
+/* ---------- projets ---------- */
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.proj{background:var(--surface);padding:clamp(20px,3vw,30px);display:flex;flex-direction:column}
+.proj-top{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-soft);margin-bottom:14px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12px}
+.chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--live)}
+.chip.wip::before{background:var(--pending)}
+.proj p{font-size:15px;color:var(--ink-soft);margin:10px 0 16px}
+.proj .tags{margin-top:auto}
+
+/* ---------- stack + parcours ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px)}
+.stack-row{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px}
+.stack-row dt{color:var(--ink-soft);font-size:14px}
+.stack-row dd{margin:0}
+dl{margin:0}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{position:relative;padding:0 0 24px 26px;border-left:1.5px solid var(--line);margin-left:5px}
+.tl li:last-child{border-left-color:transparent;padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:-6px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--paper);border:2px solid var(--ink)}
+.tl li.now::before{background:var(--live);border-color:var(--live)}
+.tl time{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);display:block;margin-bottom:3px}
+.tl strong{font-family:var(--display);font-size:17px;font-weight:600;display:block}
+.tl span{font-size:14.5px;color:var(--ink-soft)}
+
+/* ---------- contact ---------- */
+.contact{background:var(--ink);color:#fff;border-top:none}
+.contact h2{max-width:22ch}
+.contact p{color:#A9BBD3}
+.contact .btn{background:#fff;color:var(--ink);border-color:#fff}
+.contact .btn:hover{background:#E4ECF6}
+.contact .btn.ghost{background:transparent;color:#fff;border-color:#5A6E8C}
+.contact .btn.ghost:hover{background:#22334F}
+.mail{font-family:var(--mono);font-size:clamp(15px,2.6vw,22px);color:#fff;text-decoration:none;border-bottom:1.5px solid #5A6E8C;padding-bottom:2px}
+.mail:hover{border-bottom-color:#fff}
+.copied{font-size:13.5px;color:var(--live);margin-left:10px;opacity:0;transition:opacity .2s}
+.copied.on{opacity:1}
+footer{padding:26px 0 34px;font-size:13.5px;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between;border-top:1px solid var(--line)}
+footer a{text-decoration:none;border-bottom:1px solid var(--line)}
+
+/* ---------- responsive ---------- */
+@media (max-width:860px){
+  .nav{
+    display:none;position:absolute;top:62px;left:0;right:0;background:var(--surface);
+    border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:8px var(--gut) 16px;
+  }
+  .nav.open{display:flex}
+  .nav a{padding:12px 0;border-bottom:1px solid var(--line);font-size:16px;color:var(--ink)}
+  .burger{display:block}
+  .pipe{grid-template-columns:1fr 1fr}
+  .node:nth-child(2){border-right:1px solid var(--line);border-radius:0 var(--r) 0 0}
+  .node:first-child{border-radius:var(--r) 0 0 0}
+  .node:nth-child(3){border-top:none;border-radius:0 0 0 var(--r)}
+  .node:last-child{border-top:none;border-radius:0 0 var(--r) 0}
+  .rail{display:none}
+  .detail{grid-template-columns:1fr}
+  .projects{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  .offer{grid-template-columns:1fr;gap:4px}
+  .offer-i{padding-top:0}
+  .price{padding-top:6px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#" class="mark">Mounirou<span>.</span></a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#offres">Prestations</a>
+      <a href="#projets">Réalisations</a>
+      <a href="#stack">Stack</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="status"><span class="dot" aria-hidden="true"></span> Disponible pour de nouvelles missions</span>
+      <h1>Vos formulaires remplissent votre CRM. Sans intervention humaine.</h1>
+      <p class="lede">Développeur full-stack en Île-de-France. Je construis des landing pages qui convertissent et la tuyauterie qui achemine les leads jusqu'à vos équipes : API, SFTP, automatisation n8n.</p>
+      <div class="cta-row">
+        <a class="btn" href="#contact">Parler de votre projet</a>
+        <a class="btn ghost" href="#projets">Voir les réalisations</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIPELINE INTERACTIF -->
+  <section class="pipe-block" aria-labelledby="pipe-h">
+    <div class="wrap">
+      <div class="pipe-intro">
+        <h2 id="pipe-h">Le trajet d'un lead</h2>
+        <p class="muted">Touchez une étape pour voir ce qui s'y passe.</p>
+      </div>
+
+      <div class="pipe" role="tablist" aria-label="Étapes du trajet d'un lead">
+        <button class="node" role="tab" id="tab-0" aria-controls="panel" aria-selected="true">
+          <span class="n-step">01</span>
+          <span class="n-name">Formulaire</span>
+          <span class="n-sub">Landing page, campagne</span>
+        </button>
+        <button class="node" role="tab" id="tab-1" aria-controls="panel" aria-selected="false">
+          <span class="n-step">02</span>
+          <span class="n-name">Validation</span>
+          <span class="n-sub">Contrôles, déduplication</span>
+        </button>
+        <button class="node" role="tab" id="tab-2" aria-controls="panel" aria-selected="false">
+          <span class="n-step">03</span>
+          <span class="n-name">Acheminement</span>
+          <span class="n-sub">API, SFTP, webhook</span>
+        </button>
+        <button class="node" role="tab" id="tab-3" aria-controls="panel" aria-selected="false">
+          <span class="n-step">04</span>
+          <span class="n-name">Suivi</span>
+          <span class="n-sub">Relances, reporting</span>
+        </button>
+      </div>
+
+      <div class="rail" id="rail" aria-hidden="true">
+        <i class="packet"></i><i class="packet"></i><i class="packet"></i>
+      </div>
+
+      <div class="detail" id="panel" role="tabpanel" aria-labelledby="tab-0">
+        <div>
+          <h3 id="d-title">Formulaire</h3>
+          <p id="d-text"></p>
+          <ul id="d-list"></ul>
+        </div>
+        <div>
+          <p class="pre-cap" id="d-cap"></p>
+          <pre id="d-code"></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFRES -->
+  <section class="sec" id="offres">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Trois façons de travailler ensemble</h2>
+        <p>Un périmètre écrit, un délai annoncé, un prix fixe. Pas de facturation à la surprise.</p>
+      </div>
+      <div class="offers">
+        <article class="offer">
+          <div class="offer-i">A</div>
+          <div>
+            <h3>Landing page qui convertit</h3>
+            <p>Page unique, chargée en moins d'une seconde, pensée pour un seul objectif : récupérer un contact qualifié. Formulaire branché sur votre outil dès la mise en ligne.</p>
+            <div class="tags"><span class="tag">HTML/CSS/JS</span><span class="tag">SEO technique</span><span class="tag">Tracking</span><span class="tag">Hébergement</span></div>
+          </div>
+          <div class="price">5 à 10 jours</div>
+        </article>
+        <article class="offer">
+          <div class="offer-i">B</div>
+          <div>
+            <h3>Livraison de leads automatisée</h3>
+            <p>Vos leads partent de votre formulaire vers le CRM du client final, au bon format, avec les rejets tracés. Dépôt SFTP, appel API, webhook : je m'adapte à ce qu'attend le destinataire.</p>
+            <div class="tags"><span class="tag">API REST</span><span class="tag">SFTP</span><span class="tag">n8n</span><span class="tag">Postman</span><span class="tag">SQL</span></div>
+          </div>
+          <div class="price">Sur devis</div>
+        </article>
+        <article class="offer">
+          <div class="offer-i">C</div>
+          <div>
+            <h3>Automatisation des tâches répétitives</h3>
+            <p>Devis, relances, exports, synchronisation entre deux outils qui ne se parlent pas. On liste ce que vous refaites à la main chaque semaine, et on le supprime de votre agenda.</p>
+            <div class="tags"><span class="tag">n8n</span><span class="tag">Webhooks</span><span class="tag">Google Sheets</span><span class="tag">Scripts</span></div>
+          </div>
+          <div class="price">Forfait ou abonnement</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
+  <section class="sec" id="projets">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Réalisations</h2>
+        <p>Des projets clients et des exercices poussés jusqu'au bout, en production ou en local.</p>
+      </div>
+      <div class="projects">
+        <article class="proj">
+          <div class="proj-top"><span class="chip">En ligne</span> · Prototype client</div>
+          <h3>Boréal — site de climatisation</h3>
+          <p>Site vitrine en un seul fichier, avec un thermostat interactif qui change de couleur et de mode selon le réglage. Aucune dépendance, tout tient dans le navigateur.</p>
+          <div class="tags"><span class="tag">JS natif</span><span class="tag">SVG</span><span class="tag">Single-file</span></div>
+        </article>
+        <article class="proj">
+          <div class="proj-top"><span class="chip">En ligne</span> · Projet perso</div>
+          <h3>Site de services freelance</h3>
+          <p>Trois niveaux de prestation présentés pour le secteur immobilier, avec un parcours qui amène directement à la prise de contact. Zéro framework.</p>
+          <div class="tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Responsive</span><span class="tag">Copywriting</span></div>
+        </article>
+        <article class="proj">
+          <div class="proj-top"><span class="chip">Mission</span> · Dataventure</div>
+          <h3>API de génération de leads</h3>
+          <p>Collection Postman et recette d'une API de livraison de leads sur une campagne automobile : formats attendus, codes d'erreur, cas de rejet documentés pour l'équipe.</p>
+          <div class="tags"><span class="tag">API REST</span><span class="tag">Postman</span><span class="tag">Recette</span></div>
+        </article>
+        <article class="proj">
+          <div class="proj-top"><span class="chip wip">En cours</span> · Produit</div>
+          <h3>Plateforme de location entre particuliers</h3>
+          <p>Location de voitures entre particuliers : réservation, calendrier de disponibilité, gestion des annonces. Choix techniques arrêtés, développement en cours.</p>
+          <div class="tags"><span class="tag">TypeScript</span><span class="tag">SQL</span><span class="tag">HTML/CSS</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK + PARCOURS -->
+  <section class="sec" id="stack">
+    <div class="wrap two">
+      <div>
+        <h2>Stack</h2>
+        <dl style="margin-top:26px">
+          <div class="stack-row"><dt>Front</dt><dd>HTML, CSS, JavaScript, TypeScript</dd></div>
+          <div class="stack-row"><dt>Back</dt><dd>Node.js, PHP, API REST</dd></div>
+          <div class="stack-row"><dt>Données</dt><dd>MySQL / MariaDB, SQL, CSV &amp; flux SFTP</dd></div>
+          <div class="stack-row"><dt>Automatisation</dt><dd>n8n, webhooks, tâches planifiées</dd></div>
+          <div class="stack-row"><dt>Outils</dt><dd>Git, Postman, Figma, Netlify / Vercel</dd></div>
+        </dl>
+      </div>
+      <div id="parcours">
+        <h2>Parcours</h2>
+        <ol class="tl" style="margin-top:26px">
+          <li class="now">
+            <time>Depuis septembre 2026</time>
+            <strong>Freelance — développement &amp; automatisation</strong>
+            <span>Missions pour PME, agences et artisans en Île-de-France.</span>
+          </li>
+          <li>
+            <time>2024 – 2026</time>
+            <strong>Alternance chez Dataventure</strong>
+            <span>Landing pages de campagne, intégration et livraison de leads par API et SFTP, automatisations internes.</span>
+          </li>
+          <li>
+            <time>Formation</time>
+            <strong>Développement web full-stack</strong>
+            <span>La Courneuve, Île-de-France.</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec contact" id="contact">
+    <div class="wrap">
+      <h2>Dites-moi ce qui bloque, je vous dis si je peux le régler.</h2>
+      <p style="margin-top:16px;max-width:52ch">Réponse sous 24 h en semaine. Un premier échange de 20 minutes suffit généralement pour savoir si ça vaut le coup d'aller plus loin.</p>
+      <p style="margin:30px 0 8px">
+        <a class="mail" id="mail" href="mailto:mounirou.cisse@outlook.fr">mounirou.cisse@outlook.fr</a>
+        <span class="copied" id="copied">Copié</span>
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="mailto:mounirou.cisse@outlook.fr?subject=Projet%20web">Écrire un mail</a>
+        <button class="btn ghost" id="copy">Copier l'adresse</button>
+        <a class="btn ghost" href="https://www.linkedin.com/in/mounirou-cisse-a86a4a1a1/" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="https://www.malt.fr/profile/mouniroucisse" rel="noopener">Malt</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>Mounirou — Développeur full-stack, Île-de-France</span>
+  <span>Site fait à la main, sans framework. <a href="https://github.com/mounirou/portfolio" target="_blank" rel="noopener">Code source</a></span>
+</footer>
+
+<script>
+/* ---- menu mobile ---- */
+const burger = document.getElementById('burger'), nav = document.getElementById('nav');
+burger.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open);
+  burger.textContent = open ? 'Fermer' : 'Menu';
+});
+nav.addEventListener('click', e => {
+  if (e.target.tagName === 'A') { nav.classList.remove('open'); burger.textContent = 'Menu'; burger.setAttribute('aria-expanded','false'); }
+});
+
+/* ---- pipeline ---- */
+const STAGES = [
+  {
+    title:"Formulaire",
+    text:"Une page, un objectif, un formulaire court. Les champs sont validés côté navigateur avant l'envoi, et la source de la campagne est conservée avec le contact.",
+    list:["Chargement sous la seconde sur mobile","Validation des champs en direct","Origine du trafic tracée jusqu'au lead"],
+    cap:"Ce que le formulaire envoie",
+    code:'POST /api/lead\n{\n  <span class="k">"nom"</span>: "Dupont",\n  <span class="k">"tel"</span>: "+33612345678",\n  <span class="k">"cp"</span>: "93120",\n  <span class="k">"campagne"</span>: "clim-ete-93",\n  <span class="k">"consentement"</span>: true\n}'
+  },
+  {
+    title:"Validation",
+    text:"Un lead invalide coûte plus cher qu'un lead perdu. Format du téléphone, existence du code postal, doublons sur les trente derniers jours : tout est contrôlé avant de partir.",
+    list:["Téléphone et e-mail normalisés","Doublons écartés et journalisés","Consentement horodaté et conservé"],
+    cap:"Résultat du contrôle",
+    code:'{\n  <span class="k">"statut"</span>: "valide",\n  <span class="k">"tel_normalise"</span>: "0612345678",\n  <span class="k">"doublon"</span>: false,\n  <span class="k">"score"</span>: 92\n}'
+  },
+  {
+    title:"Acheminement",
+    text:"Chaque destinataire a ses exigences : appel API, dépôt de fichier sur un SFTP, webhook. Le lead est reformaté pour lui, et les échecs sont réessayés puis signalés.",
+    list:["API REST, SFTP ou webhook au choix","Nouvelle tentative en cas d'échec","Alerte immédiate si le flux s'arrête"],
+    cap:"Dépôt du fichier de leads",
+    code:'sftp&gt; put leads_2026-09-07.csv /in/\n\n<span class="k">200</span> 1 lead accepté\n<span class="k">200</span> accusé de réception reçu\n<span class="k">ok</span>  flux clos'
+  },
+  {
+    title:"Suivi",
+    text:"Le lead arrive : la relance part, le tableau se met à jour. Vous voyez combien de contacts sont entrés, combien ont été livrés, et où ça coince — sans ouvrir un seul outil technique.",
+    list:["Relance automatique par mail ou SMS","Tableau de bord des volumes livrés","Rejets visibles et corrigeables"],
+    cap:"Scénario n8n déclenché",
+    code:'Webhook → Filtrer statut\n  ├─ valide  → Mail de bienvenue\n  │           → Ligne ajoutée au suivi\n  └─ rejeté  → Alerte à l\'équipe'
+  }
+];
+const tabs = [...document.querySelectorAll('.node')];
+const el = { title:'d-title', text:'d-text', list:'d-list', cap:'d-cap', code:'d-code' };
+for (const k in el) el[k] = document.getElementById(el[k]);
+
+function show(i){
+  const s = STAGES[i];
+  tabs.forEach((t,j) => t.setAttribute('aria-selected', j === i));
+  el.title.textContent = s.title;
+  el.text.textContent = s.text;
+  el.list.innerHTML = s.list.map(x => '<li>' + x + '</li>').join('');
+  el.cap.textContent = s.cap;
+  el.code.innerHTML = s.code;
+  document.getElementById('panel').setAttribute('aria-labelledby','tab-' + i);
+}
+tabs.forEach((t,i) => {
+  t.addEventListener('click', () => show(i));
+  t.addEventListener('keydown', e => {
+    const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+    if (!d) return;
+    e.preventDefault();
+    const n = (i + d + tabs.length) % tabs.length;
+    tabs[n].focus(); show(n);
+  });
+});
+show(0);
+
+/* animation des paquets : seulement quand le rail est visible */
+const rail = document.getElementById('rail');
+if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  new IntersectionObserver(es => es.forEach(e => rail.classList.toggle('running', e.isIntersecting)))
+    .observe(rail);
+}
+
+/* ---- copier l'adresse ---- */
+document.getElementById('copy').addEventListener('click', async () => {
+  const mail = document.getElementById('mail').textContent.trim();
+  try { await navigator.clipboard.writeText(mail); } catch (e) {
+    const t = document.createElement('textarea');
+    t.value = mail; document.body.appendChild(t); t.select();
+    document.execCommand('copy'); t.remove();
+  }
+  const tag = document.getElementById('copied');
+  tag.classList.add('on');
+  setTimeout(() => tag.classList.remove('on'), 1600);
+});
+</script>
+</body>
+</html>
