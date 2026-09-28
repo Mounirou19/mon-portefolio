@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mounirou — Développeur full-stack, landing pages & tuyauterie de leads</title>
-<meta name="description" content="Je construis des landing pages qui convertissent et la tuyauterie qui livre les leads chez vous : API, SFTP, automatisation n8n. Freelance en Île-de-France.">
+<title>Mounirou — Développeur full-stack freelance en Île-de-France</title>
+<meta name="description" content="Sites vitrines, landing pages, applications web sur mesure, API et automatisations. Développeur full-stack freelance en Île-de-France.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -168,6 +168,25 @@ dl{margin:0}
 .tl strong{font-family:var(--display);font-size:17px;font-weight:600;display:block}
 .tl span{font-size:14.5px;color:var(--ink-soft)}
 
+/* ---------- méthode ---------- */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.steps li{background:var(--surface);padding:clamp(18px,2.5vw,26px)}
+.steps .n-step{color:var(--ink-soft)}
+.steps h3{margin-bottom:8px}
+.steps p{font-size:14.5px;color:var(--ink-soft);margin:0}
+
+/* ---------- faq ---------- */
+.faq{border-top:1px solid var(--line);max-width:780px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{
+  list-style:none;cursor:pointer;padding:20px 36px 20px 0;position:relative;
+  font-family:var(--display);font-weight:600;font-size:clamp(17px,1.6vw,19px);
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:16px;font-family:var(--mono);font-size:22px;color:var(--ink-soft)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{font-size:15px;color:var(--ink-soft);margin:0 0 20px}
+
 /* ---------- contact ---------- */
 .contact{background:var(--ink);color:#fff;border-top:none}
 .contact h2{max-width:22ch}
@@ -200,10 +219,15 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
   .rail{display:none}
   .detail{grid-template-columns:1fr}
   .projects{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
   .two{grid-template-columns:1fr}
   .offer{grid-template-columns:1fr;gap:4px}
   .offer-i{padding-top:0}
   .price{padding-top:6px}
+}
+@media (max-width:520px){
+  .steps{grid-template-columns:1fr}
+  .stack-row{grid-template-columns:1fr;gap:2px}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
@@ -219,8 +243,10 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
     <nav class="nav" id="nav" aria-label="Navigation principale">
       <a href="#offres">Prestations</a>
       <a href="#projets">Réalisations</a>
+      <a href="#methode">Méthode</a>
       <a href="#stack">Stack</a>
       <a href="#parcours">Parcours</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -232,7 +258,7 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
     <div class="wrap">
       <span class="status"><span class="dot" aria-hidden="true"></span> Disponible pour de nouvelles missions</span>
       <h1>Vos formulaires remplissent votre CRM. Sans intervention humaine.</h1>
-      <p class="lede">Développeur full-stack en Île-de-France. Je construis des landing pages qui convertissent et la tuyauterie qui achemine les leads jusqu'à vos équipes : API, SFTP, automatisation n8n.</p>
+      <p class="lede">Développeur full-stack en Île-de-France. Sites vitrines, landing pages, applications web sur mesure, API et automatisations : je prends en charge votre projet du premier échange à la mise en ligne, puis je le maintiens.</p>
       <div class="cta-row">
         <a class="btn" href="#contact">Parler de votre projet</a>
         <a class="btn ghost" href="#projets">Voir les réalisations</a>
@@ -293,12 +319,21 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
   <section class="sec" id="offres">
     <div class="wrap">
       <div class="sec-head">
-        <h2>Trois façons de travailler ensemble</h2>
-        <p>Un périmètre écrit, un délai annoncé, un prix fixe. Pas de facturation à la surprise.</p>
+        <h2>Ce que je peux faire pour vous</h2>
+        <p>Du site d'une page à l'application complète. Pour chaque mission : un périmètre écrit, un délai annoncé, un prix fixé avant de commencer. Pas de facturation à la surprise.</p>
       </div>
       <div class="offers">
         <article class="offer">
           <div class="offer-i">A</div>
+          <div>
+            <h3>Site vitrine</h3>
+            <p>Quelques pages claires pour présenter votre activité, vos réalisations et vos tarifs, avec un formulaire de contact qui arrive vraiment dans votre boîte. Vous pouvez modifier les textes vous-même si besoin.</p>
+            <div class="tags"><span class="tag">Responsive</span><span class="tag">SEO local</span><span class="tag">CMS au besoin</span><span class="tag">Nom de domaine</span></div>
+          </div>
+          <div class="price">1 à 3 semaines</div>
+        </article>
+        <article class="offer">
+          <div class="offer-i">B</div>
           <div>
             <h3>Landing page qui convertit</h3>
             <p>Page unique, chargée en moins d'une seconde, pensée pour un seul objectif : récupérer un contact qualifié. Formulaire branché sur votre outil dès la mise en ligne.</p>
@@ -307,7 +342,25 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
           <div class="price">5 à 10 jours</div>
         </article>
         <article class="offer">
-          <div class="offer-i">B</div>
+          <div class="offer-i">C</div>
+          <div>
+            <h3>Application web sur mesure</h3>
+            <p>Espace client, back-office, outil de réservation, tableau de bord interne : quand un tableur ou un logiciel du commerce ne suffit plus. Comptes utilisateurs, base de données, droits d'accès, livraison par étapes testables.</p>
+            <div class="tags"><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">SQL</span><span class="tag">Authentification</span></div>
+          </div>
+          <div class="price">Sur devis</div>
+        </article>
+        <article class="offer">
+          <div class="offer-i">D</div>
+          <div>
+            <h3>API &amp; intégrations</h3>
+            <p>Faire parler vos outils entre eux : CRM, paiement, facturation, e-mailing, services tiers. Je conçois une API propre et documentée, ou je branche la vôtre sur celles de vos partenaires.</p>
+            <div class="tags"><span class="tag">API REST</span><span class="tag">Webhooks</span><span class="tag">Stripe</span><span class="tag">Documentation</span></div>
+          </div>
+          <div class="price">Sur devis</div>
+        </article>
+        <article class="offer">
+          <div class="offer-i">E</div>
           <div>
             <h3>Livraison de leads automatisée</h3>
             <p>Vos leads partent de votre formulaire vers le CRM du client final, au bon format, avec les rejets tracés. Dépôt SFTP, appel API, webhook : je m'adapte à ce qu'attend le destinataire.</p>
@@ -316,7 +369,7 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
           <div class="price">Sur devis</div>
         </article>
         <article class="offer">
-          <div class="offer-i">C</div>
+          <div class="offer-i">F</div>
           <div>
             <h3>Automatisation des tâches répétitives</h3>
             <p>Devis, relances, exports, synchronisation entre deux outils qui ne se parlent pas. On liste ce que vous refaites à la main chaque semaine, et on le supprime de votre agenda.</p>
@@ -324,7 +377,48 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
           </div>
           <div class="price">Forfait ou abonnement</div>
         </article>
+        <article class="offer">
+          <div class="offer-i">G</div>
+          <div>
+            <h3>Refonte, maintenance &amp; performance</h3>
+            <p>Un site lent, cassé sur mobile ou que plus personne n'ose toucher. Audit, corrections, mises à jour de sécurité, accélération du chargement, sauvegardes, puis suivi mensuel pour que ça ne se reproduise pas.</p>
+            <div class="tags"><span class="tag">Audit</span><span class="tag">Lighthouse</span><span class="tag">Accessibilité</span><span class="tag">Sécurité</span><span class="tag">WordPress</span></div>
+          </div>
+          <div class="price">Audit + forfait mensuel</div>
+        </article>
       </div>
+    </div>
+  </section>
+
+  <!-- MÉTHODE -->
+  <section class="sec" id="methode">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Comment se déroule une mission</h2>
+        <p>Vous savez à chaque étape ce qui est fait, ce qui reste, et ce que ça coûte.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="n-step">01</span>
+          <h3>Premier échange</h3>
+          <p>20 minutes pour comprendre le besoin, le contexte et les contraintes. Gratuit, sans engagement.</p>
+        </li>
+        <li>
+          <span class="n-step">02</span>
+          <h3>Devis écrit</h3>
+          <p>Périmètre détaillé, délai, prix fixe. Ce qui n'est pas dans le devis n'est pas facturé sans votre accord.</p>
+        </li>
+        <li>
+          <span class="n-step">03</span>
+          <h3>Livraisons régulières</h3>
+          <p>Une version en ligne à tester dès les premiers jours, mise à jour au fil de l'avancement. Vos retours sont intégrés au fur et à mesure.</p>
+        </li>
+        <li>
+          <span class="n-step">04</span>
+          <h3>Mise en ligne &amp; suivi</h3>
+          <p>Déploiement, transmission des accès et du code, courte prise en main. Maintenance proposée, jamais imposée.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -372,11 +466,14 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
       <div>
         <h2>Stack</h2>
         <dl style="margin-top:26px">
-          <div class="stack-row"><dt>Front</dt><dd>HTML, CSS, JavaScript, TypeScript</dd></div>
-          <div class="stack-row"><dt>Back</dt><dd>Node.js, PHP, API REST</dd></div>
-          <div class="stack-row"><dt>Données</dt><dd>MySQL / MariaDB, SQL, CSV &amp; flux SFTP</dd></div>
-          <div class="stack-row"><dt>Automatisation</dt><dd>n8n, webhooks, tâches planifiées</dd></div>
-          <div class="stack-row"><dt>Outils</dt><dd>Git, Postman, Figma, Netlify / Vercel</dd></div>
+          <div class="stack-row"><dt>Front</dt><dd>HTML, CSS, JavaScript, TypeScript, React, Tailwind</dd></div>
+          <div class="stack-row"><dt>Back</dt><dd>Node.js (Express), PHP, API REST, authentification</dd></div>
+          <div class="stack-row"><dt>Données</dt><dd>MySQL / MariaDB, PostgreSQL, SQL, CSV &amp; flux SFTP</dd></div>
+          <div class="stack-row"><dt>CMS</dt><dd>WordPress, headless au besoin</dd></div>
+          <div class="stack-row"><dt>Automatisation</dt><dd>n8n, webhooks, tâches planifiées, scripts</dd></div>
+          <div class="stack-row"><dt>Déploiement</dt><dd>Cloudflare, Netlify / Vercel, Docker, GitHub Actions</dd></div>
+          <div class="stack-row"><dt>Qualité</dt><dd>Tests, accessibilité, performance, SEO technique</dd></div>
+          <div class="stack-row"><dt>Outils</dt><dd>Git, Postman, Figma</dd></div>
         </dl>
       </div>
       <div id="parcours">
@@ -398,6 +495,37 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
             <span>La Courneuve, Île-de-France.</span>
           </li>
         </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Questions fréquentes</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Travaillez-vous uniquement sur des projets de leads ?</summary>
+          <p>Non. C'est une spécialité, pas une limite. Je réalise aussi des sites vitrines, des applications web, des API, des intégrations entre outils et de la maintenance de sites existants.</p>
+        </details>
+        <details>
+          <summary>Pouvez-vous reprendre un site ou un code existant ?</summary>
+          <p>Oui. Je commence par un audit pour vous dire ce qui fonctionne, ce qui pose problème et ce que coûterait la correction, avant de toucher quoi que ce soit.</p>
+        </details>
+        <details>
+          <summary>À qui appartient le code une fois livré ?</summary>
+          <p>À vous. Vous recevez le code source, les accès à l'hébergement et au nom de domaine, et une documentation pour qu'un autre développeur puisse reprendre la suite si besoin.</p>
+        </details>
+        <details>
+          <summary>Travaillez-vous à distance ?</summary>
+          <p>Oui, partout en France. Pour les clients en Île-de-France, une rencontre sur place est possible au lancement du projet.</p>
+        </details>
+        <details>
+          <summary>Comment se passe le paiement ?</summary>
+          <p>Un acompte au démarrage, le solde à la livraison. Pour les projets longs, la facturation est découpée par étape validée.</p>
+        </details>
       </div>
     </div>
   </section>
