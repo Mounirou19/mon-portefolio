@@ -197,6 +197,22 @@ dl{margin:0}
 .contact .btn.ghost:hover{background:#22334F}
 .mail{font-family:var(--mono);font-size:clamp(15px,2.6vw,22px);color:#fff;text-decoration:none;border-bottom:1.5px solid #5A6E8C;padding-bottom:2px}
 .mail:hover{border-bottom-color:#fff}
+.cform{margin-top:34px;max-width:620px;display:grid;gap:14px}
+.cform .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cform label{display:grid;gap:6px;font-size:13.5px;color:#A9BBD3}
+.cform input,.cform textarea{
+  font:inherit;font-size:15px;color:#fff;background:#22334F;border:1px solid #5A6E8C;
+  border-radius:var(--r);padding:12px 14px;width:100%;box-sizing:border-box
+}
+.cform textarea{min-height:140px;resize:vertical}
+.cform input:focus,.cform textarea:focus{outline:2px solid #fff;outline-offset:1px;border-color:#fff}
+.cform .hp{position:absolute;left:-9999px}
+.cform button{justify-self:start}
+.cform button[disabled]{opacity:.6;cursor:wait}
+.fstatus{font-size:14px;margin:0;min-height:1.4em}
+.fstatus.ok{color:#7EE2B8}
+.fstatus.err{color:#FFB4A8}
+@media (max-width:520px){.cform .row{grid-template-columns:1fr}}
 .copied{font-size:13.5px;color:var(--live);margin-left:10px;opacity:0;transition:opacity .2s}
 .copied.on{opacity:1}
 footer{padding:26px 0 34px;font-size:13.5px;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between;border-top:1px solid var(--line)}
@@ -535,12 +551,25 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
     <div class="wrap">
       <h2>Dites-moi ce qui bloque, je vous dis si je peux le régler.</h2>
       <p style="margin-top:16px;max-width:52ch">Réponse sous 24 h en semaine. Un premier échange de 20 minutes suffit généralement pour savoir si ça vaut le coup d'aller plus loin.</p>
+      <form class="cform" id="cform" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="1e90bb98-832b-46aa-9f76-d436bba213b8">
+        <input type="hidden" name="subject" value="Nouveau message depuis mouniroucisse.fr">
+        <input type="hidden" name="from_name" value="Portfolio mouniroucisse.fr">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+        <div class="row">
+          <label>Nom<input type="text" name="name" required autocomplete="name"></label>
+          <label>E-mail<input type="email" name="email" required autocomplete="email"></label>
+        </div>
+        <label>Votre projet<textarea name="message" required></textarea></label>
+        <button class="btn" type="submit">Envoyer le message</button>
+        <p class="fstatus" id="fstatus" role="status" aria-live="polite"></p>
+      </form>
       <p style="margin:30px 0 8px">
-        <a class="mail" id="mail" href="mailto:mounirou.cisse@outlook.fr">mounirou.cisse@outlook.fr</a>
+        <a class="mail" id="mail" href="mailto:admin@mouniroucisse.fr">admin@mouniroucisse.fr</a>
         <span class="copied" id="copied">Copié</span>
       </p>
       <div class="cta-row">
-        <a class="btn" href="mailto:mounirou.cisse@outlook.fr?subject=Projet%20web">Écrire un mail</a>
+        <a class="btn" href="mailto:admin@mouniroucisse.fr?subject=Projet%20web">Écrire un mail</a>
         <button class="btn ghost" id="copy">Copier l'adresse</button>
         <a class="btn ghost" href="https://www.linkedin.com/in/mounirou-cisse-a86a4a1a1/" rel="noopener">LinkedIn</a>
         <a class="btn ghost" href="https://www.malt.fr/profile/mouniroucisse" rel="noopener">Malt</a>
@@ -641,6 +670,28 @@ document.getElementById('copy').addEventListener('click', async () => {
   const tag = document.getElementById('copied');
   tag.classList.add('on');
   setTimeout(() => tag.classList.remove('on'), 1600);
+});
+
+/* ---- formulaire de contact ---- */
+const form = document.getElementById('cform'), fstatus = document.getElementById('fstatus');
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn = form.querySelector('button');
+  btn.disabled = true; fstatus.className = 'fstatus'; fstatus.textContent = 'Envoi en cours…';
+  try {
+    const r = await fetch(form.action, {
+      method:'POST', headers:{ Accept:'application/json' }, body:new FormData(form)
+    });
+    const data = await r.json();
+    if (!r.ok || !data.success) throw new Error(data.message);
+    form.reset();
+    fstatus.className = 'fstatus ok';
+    fstatus.textContent = 'Merci, votre message est bien parti. Je vous réponds sous 24 h en semaine.';
+  } catch (err) {
+    fstatus.className = 'fstatus err';
+    fstatus.textContent = "L'envoi a échoué. Écrivez-moi directement à admin@mouniroucisse.fr.";
+  }
+  btn.disabled = false;
 });
 </script>
 </body>
