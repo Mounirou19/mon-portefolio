@@ -3,8 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mounirou — Développeur full-stack freelance en Île-de-France</title>
-<meta name="description" content="Sites vitrines, landing pages, applications web sur mesure, API et automatisations. Développeur full-stack freelance en Île-de-France.">
+<title>Mounirou Cissé — Développeur web freelance en Île-de-France</title>
+<meta name="description" content="Sites vitrines, applications web sur mesure et automatisations pour indépendants, PME et startups. Devis gratuit, prix fixé avant de commencer.">
+<link rel="canonical" href="https://mouniroucisse.fr/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2316233A'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='30' fill='%23fff'%3EMC%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://mouniroucisse.fr/">
+<meta property="og:title" content="Mounirou Cissé — Développeur web freelance">
+<meta property="og:description" content="Sites vitrines, applications web sur mesure et automatisations. Devis gratuit, prix fixé avant de commencer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -82,6 +89,7 @@ p{margin:0 0 1rem;max-width:66ch}
 .pipe-block{border-top:1px solid var(--line);padding:clamp(32px,5vw,56px) 0}
 .pipe-intro{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:28px}
 .pipe-intro p{margin:0;font-size:15px}
+#pipe-h{max-width:26ch}
 .pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
 .node{
   position:relative;background:var(--surface);border:1px solid var(--line);border-right:none;
@@ -139,7 +147,20 @@ pre .k{color:#7FD1A8}.pre-cap{font-size:13px;color:var(--ink-soft);margin:0 0 8p
 .offer p{margin:8px 0 0;font-size:15px;color:var(--ink-soft);max-width:56ch}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .tag{font-size:12.5px;font-family:var(--mono);border:1px solid var(--line);border-radius:100px;padding:3px 9px;color:var(--ink-soft)}
-.price{font-family:var(--display);font-size:16px;font-weight:600;white-space:nowrap;padding-top:3px}
+.price{font-family:var(--display);font-size:16px;font-weight:600;white-space:nowrap;padding-top:3px;text-align:right}
+.price small{display:block;font-family:var(--body);font-size:13px;font-weight:400;color:var(--ink-soft);margin-top:2px}
+.price-note{font-size:13.5px;color:var(--ink-soft);margin:18px 0 0}
+
+.trust{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14.5px;color:var(--ink-soft)}
+.trust li::before{content:"✓";color:var(--live);font-weight:600;margin-right:7px}
+
+/* ---------- pour qui ---------- */
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.who li{background:var(--surface);padding:clamp(20px,2.8vw,28px)}
+.who h3{margin-bottom:10px}
+.who p{font-size:14.5px;color:var(--ink-soft);margin:0 0 12px}
+.who ul{margin:0;padding-left:18px;font-size:14.5px}
+.who ul li{background:none;padding:0;margin-bottom:4px}
 
 /* ---------- projets ---------- */
 .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
@@ -150,8 +171,23 @@ pre .k{color:#7FD1A8}.pre-cap{font-size:13px;color:var(--ink-soft);margin:0 0 8p
 .chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12px}
 .chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--live)}
 .chip.wip::before{background:var(--pending)}
+.chip.demo::before{background:var(--ink-soft)}
+.proj-img{margin:0 0 18px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;aspect-ratio:1200/548;background:var(--paper)}
+.proj-img img{width:100%;height:100%;object-fit:cover;object-position:top}
+.proj-more{font-size:14px;font-weight:600;margin-top:14px}
 .proj p{font-size:15px;color:var(--ink-soft);margin:10px 0 16px}
 .proj .tags{margin-top:auto}
+
+/* ---------- à propos ---------- */
+.about{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,40px);align-items:start;margin-bottom:clamp(36px,5vw,56px)}
+.avatar{
+  width:clamp(96px,14vw,140px);aspect-ratio:1;border-radius:50%;overflow:hidden;
+  background:var(--ink);color:#fff;display:grid;place-items:center;
+  font-family:var(--display);font-weight:800;font-size:clamp(30px,4vw,44px);letter-spacing:-.02em
+}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.about p{color:var(--ink-soft)}
+.about p:first-of-type{margin-top:14px}
 
 /* ---------- stack + parcours ---------- */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px)}
@@ -205,10 +241,13 @@ dl{margin:0}
   border-radius:var(--r);padding:12px 14px;width:100%;box-sizing:border-box
 }
 .cform textarea{min-height:140px;resize:vertical}
+.cform ::placeholder{color:#8FA3BF}
 .cform input:focus,.cform textarea:focus{outline:2px solid #fff;outline-offset:1px;border-color:#fff}
 .cform .hp{position:absolute;left:-9999px}
 .cform button{justify-self:start}
 .cform button[disabled]{opacity:.6;cursor:wait}
+.cform .legal{font-size:12.5px;color:#8FA3BF;margin:0}
+.cform .legal a{color:inherit}
 .fstatus{font-size:14px;margin:0;min-height:1.4em}
 .fstatus.ok{color:#7EE2B8}
 .fstatus.err{color:#FFB4A8}
@@ -235,15 +274,17 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
   .rail{display:none}
   .detail{grid-template-columns:1fr}
   .projects{grid-template-columns:1fr}
+  .who{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr 1fr}
   .two{grid-template-columns:1fr}
   .offer{grid-template-columns:1fr;gap:4px}
   .offer-i{padding-top:0}
-  .price{padding-top:6px}
+  .price{padding-top:6px;text-align:left}
 }
 @media (max-width:520px){
   .steps{grid-template-columns:1fr}
   .stack-row{grid-template-columns:1fr;gap:2px}
+  .about{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
@@ -254,14 +295,13 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
 
 <header class="top">
   <div class="wrap">
-    <a href="#" class="mark">Mounirou<span>.</span></a>
+    <a href="#" class="mark">Mounirou Cissé<span>.</span></a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Navigation principale">
       <a href="#offres">Prestations</a>
       <a href="#projets">Réalisations</a>
       <a href="#methode">Méthode</a>
-      <a href="#stack">Stack</a>
-      <a href="#parcours">Parcours</a>
+      <a href="#apropos">À propos</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -273,12 +313,93 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
   <section class="hero">
     <div class="wrap">
       <span class="status"><span class="dot" aria-hidden="true"></span> Disponible pour de nouvelles missions</span>
-      <h1>Vos formulaires remplissent votre CRM. Sans intervention humaine.</h1>
-      <p class="lede">Développeur full-stack en Île-de-France. Sites vitrines, landing pages, applications web sur mesure, API et automatisations : je prends en charge votre projet du premier échange à la mise en ligne, puis je le maintiens.</p>
+      <h1>Votre projet web, livré clé en main et à prix fixe.</h1>
+      <p class="lede">Je suis Mounirou Cissé, développeur web freelance en Île-de-France. Indépendants, PME ou startups : je crée votre site, votre application ou les automatisations qui vous font gagner du temps, du premier échange à la mise en ligne. Et je reste disponible après.</p>
       <div class="cta-row">
-        <a class="btn" href="#contact">Parler de votre projet</a>
+        <a class="btn" href="#contact">Demander un devis gratuit</a>
         <a class="btn ghost" href="#projets">Voir les réalisations</a>
       </div>
+      <ul class="trust">
+        <li>Réponse sous 24 h</li>
+        <li>Prix fixé avant de commencer</li>
+        <li>Le code vous appartient</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- POUR QUI -->
+  <section class="sec" id="pourqui">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Pour qui je travaille</h2>
+        <p>Pas besoin d'y connaître quelque chose en technique : vous m'expliquez votre activité, je vous propose la solution la plus simple qui répond au besoin.</p>
+      </div>
+      <ul class="who" style="list-style:none;margin:0;padding:0">
+        <li>
+          <h3>Indépendants &amp; auto-entrepreneurs</h3>
+          <p>Vous voulez être trouvé sur Google et recevoir des demandes sans y passer vos soirées.</p>
+          <ul><li>Site vitrine professionnel</li><li>Formulaire de contact ou de devis</li><li>Référencement local</li></ul>
+        </li>
+        <li>
+          <h3>TPE &amp; PME</h3>
+          <p>Votre site date, ou votre équipe perd des heures à recopier des données d'un outil à l'autre.</p>
+          <ul><li>Refonte et maintenance</li><li>Automatisation des tâches répétitives</li><li>Connexion entre vos outils</li></ul>
+        </li>
+        <li>
+          <h3>Startups</h3>
+          <p>Vous devez sortir une première version vite, proprement, et pouvoir la faire évoluer ensuite.</p>
+          <ul><li>MVP et application web</li><li>API et intégrations</li><li>Landing page de lancement</li></ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- OFFRES -->
+  <section class="sec" id="offres">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Ce que je peux faire pour vous</h2>
+        <p>Du site d'une page à l'application complète. Pour chaque mission : un périmètre écrit, un délai annoncé, un prix fixé avant de commencer. Pas de facturation à la surprise.</p>
+      </div>
+      <div class="offers">
+        <article class="offer">
+          <div class="offer-i">A</div>
+          <div>
+            <h3>Site vitrine &amp; landing page</h3>
+            <p>Un site clair et rapide pour présenter votre activité et transformer les visiteurs en demandes de contact. Formulaire qui arrive vraiment dans votre boîte, bonne visibilité sur Google, et des textes que vous pouvez modifier vous-même.</p>
+            <div class="tags"><span class="tag">Responsive</span><span class="tag">SEO local</span><span class="tag">Formulaire</span><span class="tag">Nom de domaine</span><span class="tag">Hébergement</span></div>
+          </div>
+          <div class="price">800 – 2 500 €<small>1 à 3 semaines</small></div>
+        </article>
+        <article class="offer">
+          <div class="offer-i">B</div>
+          <div>
+            <h3>Application web sur mesure</h3>
+            <p>Espace client, outil de réservation, back-office, tableau de bord ou MVP de startup : quand un tableur ou un logiciel du commerce ne suffit plus. Comptes utilisateurs, base de données, droits d'accès, livraison par étapes que vous testez au fur et à mesure.</p>
+            <div class="tags"><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">SQL</span><span class="tag">Authentification</span></div>
+          </div>
+          <div class="price">Sur devis</div>
+        </article>
+        <article class="offer">
+          <div class="offer-i">C</div>
+          <div>
+            <h3>Automatisations &amp; intégrations</h3>
+            <p>Devis, relances, exports, synchronisation entre deux outils qui ne se parlent pas : on liste ce que vous refaites à la main chaque semaine, et on le supprime de votre agenda. Je connecte aussi vos outils entre eux (CRM, paiement, facturation, e-mailing) et j'automatise la livraison de leads.</p>
+            <div class="tags"><span class="tag">n8n</span><span class="tag">API REST</span><span class="tag">Webhooks</span><span class="tag">Stripe</span><span class="tag">Google Sheets</span></div>
+          </div>
+          <div class="price">300 – 1 500 €<small>par automatisation</small></div>
+        </article>
+        <article class="offer">
+          <div class="offer-i">D</div>
+          <div>
+            <h3>Refonte, maintenance &amp; performance</h3>
+            <p>Un site lent, cassé sur mobile ou que plus personne n'ose toucher. Audit, corrections, mises à jour de sécurité, accélération du chargement, sauvegardes, puis suivi mensuel pour que ça ne se reproduise pas.</p>
+            <div class="tags"><span class="tag">Audit</span><span class="tag">Performance</span><span class="tag">Sécurité</span><span class="tag">WordPress</span></div>
+          </div>
+          <div class="price">dès 50 €/mois<small>suivi et mises à jour</small></div>
+        </article>
+      </div>
+      <p class="price-note">Les montants sont des fourchettes indicatives. Le prix final est fixé sur devis, gratuitement, selon la complexité de votre projet, et il ne bouge plus une fois validé.</p>
     </div>
   </section>
 
@@ -286,11 +407,14 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
   <section class="pipe-block" aria-labelledby="pipe-h">
     <div class="wrap">
       <div class="pipe-intro">
-        <h2 id="pipe-h">Le trajet d'un lead</h2>
+        <div>
+          <h2 id="pipe-h">Exemple concret : un formulaire qui travaille tout seul</h2>
+          <p class="muted" style="margin-top:12px">Une demande arrive sur votre site. Elle est vérifiée, envoyée dans votre outil de suivi, et la relance part, sans que personne n'ait à recopier quoi que ce soit.</p>
+        </div>
         <p class="muted">Touchez une étape pour voir ce qui s'y passe.</p>
       </div>
 
-      <div class="pipe" role="tablist" aria-label="Étapes du trajet d'un lead">
+      <div class="pipe" role="tablist" aria-label="Étapes du traitement d'une demande">
         <button class="node" role="tab" id="tab-0" aria-controls="panel" aria-selected="true">
           <span class="n-step">01</span>
           <span class="n-name">Formulaire</span>
@@ -327,81 +451,6 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
           <p class="pre-cap" id="d-cap"></p>
           <pre id="d-code"></pre>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OFFRES -->
-  <section class="sec" id="offres">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Ce que je peux faire pour vous</h2>
-        <p>Du site d'une page à l'application complète. Pour chaque mission : un périmètre écrit, un délai annoncé, un prix fixé avant de commencer. Pas de facturation à la surprise.</p>
-      </div>
-      <div class="offers">
-        <article class="offer">
-          <div class="offer-i">A</div>
-          <div>
-            <h3>Site vitrine</h3>
-            <p>Quelques pages claires pour présenter votre activité, vos réalisations et vos tarifs, avec un formulaire de contact qui arrive vraiment dans votre boîte. Vous pouvez modifier les textes vous-même si besoin.</p>
-            <div class="tags"><span class="tag">Responsive</span><span class="tag">SEO local</span><span class="tag">CMS au besoin</span><span class="tag">Nom de domaine</span></div>
-          </div>
-          <div class="price">1 à 3 semaines</div>
-        </article>
-        <article class="offer">
-          <div class="offer-i">B</div>
-          <div>
-            <h3>Landing page qui convertit</h3>
-            <p>Page unique, chargée en moins d'une seconde, pensée pour un seul objectif : récupérer un contact qualifié. Formulaire branché sur votre outil dès la mise en ligne.</p>
-            <div class="tags"><span class="tag">HTML/CSS/JS</span><span class="tag">SEO technique</span><span class="tag">Tracking</span><span class="tag">Hébergement</span></div>
-          </div>
-          <div class="price">5 à 10 jours</div>
-        </article>
-        <article class="offer">
-          <div class="offer-i">C</div>
-          <div>
-            <h3>Application web sur mesure</h3>
-            <p>Espace client, back-office, outil de réservation, tableau de bord interne : quand un tableur ou un logiciel du commerce ne suffit plus. Comptes utilisateurs, base de données, droits d'accès, livraison par étapes testables.</p>
-            <div class="tags"><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">SQL</span><span class="tag">Authentification</span></div>
-          </div>
-          <div class="price">Sur devis</div>
-        </article>
-        <article class="offer">
-          <div class="offer-i">D</div>
-          <div>
-            <h3>API &amp; intégrations</h3>
-            <p>Faire parler vos outils entre eux : CRM, paiement, facturation, e-mailing, services tiers. Je conçois une API propre et documentée, ou je branche la vôtre sur celles de vos partenaires.</p>
-            <div class="tags"><span class="tag">API REST</span><span class="tag">Webhooks</span><span class="tag">Stripe</span><span class="tag">Documentation</span></div>
-          </div>
-          <div class="price">Sur devis</div>
-        </article>
-        <article class="offer">
-          <div class="offer-i">E</div>
-          <div>
-            <h3>Livraison de leads automatisée</h3>
-            <p>Vos leads partent de votre formulaire vers le CRM du client final, au bon format, avec les rejets tracés. Dépôt SFTP, appel API, webhook : je m'adapte à ce qu'attend le destinataire.</p>
-            <div class="tags"><span class="tag">API REST</span><span class="tag">SFTP</span><span class="tag">n8n</span><span class="tag">Postman</span><span class="tag">SQL</span></div>
-          </div>
-          <div class="price">Sur devis</div>
-        </article>
-        <article class="offer">
-          <div class="offer-i">F</div>
-          <div>
-            <h3>Automatisation des tâches répétitives</h3>
-            <p>Devis, relances, exports, synchronisation entre deux outils qui ne se parlent pas. On liste ce que vous refaites à la main chaque semaine, et on le supprime de votre agenda.</p>
-            <div class="tags"><span class="tag">n8n</span><span class="tag">Webhooks</span><span class="tag">Google Sheets</span><span class="tag">Scripts</span></div>
-          </div>
-          <div class="price">Forfait ou abonnement</div>
-        </article>
-        <article class="offer">
-          <div class="offer-i">G</div>
-          <div>
-            <h3>Refonte, maintenance &amp; performance</h3>
-            <p>Un site lent, cassé sur mobile ou que plus personne n'ose toucher. Audit, corrections, mises à jour de sécurité, accélération du chargement, sauvegardes, puis suivi mensuel pour que ça ne se reproduise pas.</p>
-            <div class="tags"><span class="tag">Audit</span><span class="tag">Lighthouse</span><span class="tag">Accessibilité</span><span class="tag">Sécurité</span><span class="tag">WordPress</span></div>
-          </div>
-          <div class="price">Audit + forfait mensuel</div>
-        </article>
       </div>
     </div>
   </section>
@@ -443,22 +492,28 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
     <div class="wrap">
       <div class="sec-head">
         <h2>Réalisations</h2>
-        <p>Des projets clients et des exercices poussés jusqu'au bout, en production ou en local.</p>
+        <p>Missions, projets personnels et démonstrations, poussés jusqu'au bout.</p>
       </div>
       <div class="projects">
         <article class="proj">
           <a class="proj-link" href="https://demo-site-vitrine.mounirou-cisse.workers.dev/" target="_blank" rel="noopener">
-            <div class="proj-top"><span class="chip">En ligne</span> · Site vitrine client</div>
-            <h3>Atelier Bréval — menuisier à Montreuil</h3>
-            <p>Site vitrine pour un atelier de menuiserie artisanale : présentation des prestations (cuisines, escaliers, agencement), galerie de réalisations filtrable, avis clients et formulaire de devis avec validation des champs.</p>
+            <figure class="proj-img"><img src="img/atelier-breval.jpg" alt="Page d'accueil du site Atelier Bréval" width="1200" height="548" loading="lazy"></figure>
+            <div class="proj-top"><span class="chip demo">Démo</span> · Site vitrine artisan</div>
+            <h3>Atelier Bréval — menuiserie</h3>
+            <p>Projet de démonstration : le site que je livrerais à un artisan. Présentation des prestations, galerie de réalisations filtrable, avis clients, formulaire de devis avec validation des champs et bandeau cookies conforme.</p>
             <div class="tags"><span class="tag">Formulaire</span><span class="tag">Galerie filtrable</span><span class="tag">Responsive</span></div>
+            <span class="proj-more">Voir le site →</span>
           </a>
         </article>
         <article class="proj">
-          <div class="proj-top"><span class="chip">En ligne</span> · Projet perso</div>
-          <h3>Site de services freelance</h3>
-          <p>Trois niveaux de prestation présentés pour le secteur immobilier, avec un parcours qui amène directement à la prise de contact. Zéro framework.</p>
-          <div class="tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Responsive</span><span class="tag">Copywriting</span></div>
+          <a class="proj-link" href="https://agence-digitale-site.mounirou-cisse.workers.dev/" target="_blank" rel="noopener">
+            <figure class="proj-img"><img src="img/digital-studio.jpg" alt="Page d'accueil du site Digital Studio" width="1200" height="548" loading="lazy"></figure>
+            <div class="proj-top"><span class="chip">En ligne</span> · Site d'agence, projet en équipe</div>
+            <h3>Digital Studio — agence digitale</h3>
+            <p>Site d'une agence de quatre personnes (développement, création visuelle, stratégie). En tant que lead developer : conception de l'interface, présentation des services et de l'équipe, parcours qui mène à la prise de contact, optimisation SEO.</p>
+            <div class="tags"><span class="tag">Vite</span><span class="tag">UX/UI</span><span class="tag">Responsive</span><span class="tag">SEO</span></div>
+            <span class="proj-more">Voir le site →</span>
+          </a>
         </article>
         <article class="proj">
           <div class="proj-top"><span class="chip">Mission</span> · Dataventure</div>
@@ -476,9 +531,20 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
     </div>
   </section>
 
-  <!-- STACK + PARCOURS -->
-  <section class="sec" id="stack">
-    <div class="wrap two">
+  <!-- À PROPOS -->
+  <section class="sec" id="apropos">
+    <div class="wrap">
+      <div class="about">
+        <!-- Pour mettre votre photo : remplacer "MC" par <img src="img/photo.jpg" alt="Mounirou Cissé"> -->
+        <div class="avatar" aria-hidden="true">MC</div>
+        <div>
+          <h2>Un seul interlocuteur, du devis à la maintenance</h2>
+          <p>Je m'appelle Mounirou Cissé. Pendant deux ans d'alternance chez Dataventure, j'ai construit des landing pages de campagne et des flux de leads qui tournaient chaque jour en production, avec de vrais enjeux : un lead perdu, c'est de l'argent perdu pour le client.</p>
+          <p>Aujourd'hui freelance, j'applique la même exigence à chaque projet. Je commence par comprendre comment vous travaillez, puis je construis l'outil le plus simple qui règle votre problème. Vous parlez directement à celui qui code, sans intermédiaire et sans jargon.</p>
+        </div>
+      </div>
+    </div>
+    <div class="wrap two" id="stack">
       <div>
         <h2>Stack</h2>
         <dl style="margin-top:26px">
@@ -498,7 +564,7 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
           <li class="now">
             <time>Depuis septembre 2026</time>
             <strong>Freelance — développement &amp; automatisation</strong>
-            <span>Missions pour PME, agences et artisans en Île-de-France.</span>
+            <span>Sites, applications et automatisations pour indépendants, PME et startups.</span>
           </li>
           <li>
             <time>2024 – 2026</time>
@@ -523,8 +589,12 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
       </div>
       <div class="faq">
         <details>
-          <summary>Travaillez-vous uniquement sur des projets de leads ?</summary>
-          <p>Non. C'est une spécialité, pas une limite. Je réalise aussi des sites vitrines, des applications web, des API, des intégrations entre outils et de la maintenance de sites existants.</p>
+          <summary>Je n'y connais rien en technique, est-ce un problème ?</summary>
+          <p>Pas du tout. Vous m'expliquez votre activité et ce que vous voulez obtenir, je m'occupe du reste. Je vous explique chaque choix en langage clair, et je vous montre comment modifier vous-même ce dont vous avez besoin.</p>
+        </details>
+        <details>
+          <summary>Je n'ai pas encore de nom de domaine ni d'hébergement.</summary>
+          <p>Je m'en occupe : choix et réservation du nom de domaine, adresse e-mail professionnelle, hébergement. Tout est enregistré à votre nom pour que vous en restiez propriétaire.</p>
         </details>
         <details>
           <summary>Pouvez-vous reprendre un site ou un code existant ?</summary>
@@ -560,8 +630,9 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
           <label>Nom<input type="text" name="name" required autocomplete="name"></label>
           <label>E-mail<input type="email" name="email" required autocomplete="email"></label>
         </div>
-        <label>Votre projet<textarea name="message" required></textarea></label>
+        <label>Votre projet en quelques mots<textarea name="message" required placeholder="Ex. : je suis plombier, je voudrais un site pour recevoir des demandes de devis."></textarea></label>
         <button class="btn" type="submit">Envoyer le message</button>
+        <p class="legal">Vos informations servent uniquement à vous répondre et ne sont jamais transmises à des tiers. <a href="mentions-legales.html">En savoir plus</a></p>
         <p class="fstatus" id="fstatus" role="status" aria-live="polite"></p>
       </form>
       <p style="margin:30px 0 8px">
@@ -579,8 +650,8 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
 </main>
 
 <footer class="wrap">
-  <span>Mounirou — Développeur full-stack, Île-de-France</span>
-  <span>Site fait à la main, sans framework. <a href="https://github.com/mounirou/portfolio" target="_blank" rel="noopener">Code source</a></span>
+  <span>© 2026 Mounirou Cissé — Développeur web freelance, Île-de-France</span>
+  <span><a href="mentions-legales.html">Mentions légales</a> · Site fait à la main, sans framework. <a href="https://github.com/Mounirou19/mon-portefolio" target="_blank" rel="noopener">Code source</a></span>
 </footer>
 
 <script>
