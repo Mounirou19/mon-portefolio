@@ -1,3 +1,15 @@
+/* ---- mesure d'audience (Umami, sans cookie) ----
+   Coller ici l'identifiant du site donné par Umami. Vide = aucune mesure. */
+const UMAMI_ID = '6a628069-e7a3-4bff-acea-081c7e9ad8a2';
+if (UMAMI_ID) {
+  const u = document.createElement('script');
+  u.defer = true;
+  u.src = 'https://cloud.umami.is/script.js';
+  u.dataset.websiteId = UMAMI_ID;
+  document.head.appendChild(u);
+}
+const track = (name, data) => { try { window.umami?.track(name, data); } catch (e) {} };
+
 /* ---- menu mobile ---- */
 const burger = document.getElementById('burger'), nav = document.getElementById('nav');
 burger.addEventListener('click', () => {
@@ -103,6 +115,7 @@ form?.addEventListener('submit', async e => {
     const data = await r.json();
     if (!r.ok || !data.success) throw new Error(data.message);
     form.reset();
+    track('contact-envoye', { page: location.pathname });
     fstatus.className = 'fstatus ok';
     fstatus.textContent = 'Merci, votre message est bien parti. Je vous réponds sous 24 h en semaine.';
   } catch (err) {
