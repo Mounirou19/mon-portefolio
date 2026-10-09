@@ -273,7 +273,7 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
 }
 
 /* ---------- pages services ---------- */
-a.more{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--line);white-space:nowrap}
+a.more{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--line)}
 a.more:hover{border-bottom-color:var(--ink)}
 .crumbs{font-size:13.5px;color:var(--ink-soft);margin-bottom:22px}
 .crumbs a{color:inherit}
