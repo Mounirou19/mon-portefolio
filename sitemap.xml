@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://mouniroucisse.fr/</loc>
-    <lastmod>2026-10-01</lastmod>
-  </url>
-  <url>
-    <loc>https://mouniroucisse.fr/creation-site-vitrine/</loc>
-    <lastmod>2026-10-01</lastmod>
-  </url>
-  <url>
-    <loc>https://mouniroucisse.fr/automatisation-n8n/</loc>
-    <lastmod>2026-10-01</lastmod>
-  </url>
+  <url><loc>https://mouniroucisse.fr/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://mouniroucisse.fr/creation-site-vitrine/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://mouniroucisse.fr/application-web-sur-mesure/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://mouniroucisse.fr/automatisation-n8n/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://mouniroucisse.fr/maintenance-site-web/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://mouniroucisse.fr/blog/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://mouniroucisse.fr/blog/prix-site-vitrine/</loc><lastmod>2026-10-09</lastmod></url>
 </urlset>
