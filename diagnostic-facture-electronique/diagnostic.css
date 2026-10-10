@@ -1,0 +1,88 @@
+/* ---------- diagnostic facture électronique ----------
+   Uniquement les variables de /style.css. Couleurs d'état : fait → --live,
+   à faire / à vérifier → --pending, en retard → --hot. Le texte reste en --ink :
+   la couleur n'est qu'un repère en plus du libellé. */
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.diag-free{font-size:14.5px;color:var(--ink-soft);margin:14px 0 0}
+
+.diag{
+  max-width:780px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:clamp(20px,4vw,36px);
+}
+.diag h3{font-size:clamp(21px,2.6vw,28px);line-height:1.15;margin:0 0 14px}
+.diag h3:focus{outline:none}
+.diag h3:focus-visible{outline:2.5px solid var(--ink);outline-offset:4px}
+.diag p{color:var(--ink-soft)}
+.diag-kicker{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);margin:0 0 10px}
+.diag-intro .btn{margin-top:8px}
+
+/* question */
+.diag-progress{height:6px;background:var(--paper);border:1px solid var(--line);border-radius:100px;overflow:hidden;margin-bottom:18px}
+.diag-progress span{display:block;height:100%;width:0;background:var(--ink);transition:width .25s ease}
+.diag-help{font-size:15px;margin:-4px 0 16px}
+.diag-answers{display:grid;gap:10px;margin-top:6px}
+.diag-answer{
+  font:inherit;font-size:16px;text-align:left;cursor:pointer;color:var(--ink);
+  min-height:52px;padding:13px 16px 13px 46px;position:relative;
+  background:var(--paper);border:1.5px solid var(--line);border-radius:var(--r);
+  transition:border-color .15s ease,background .15s ease;
+}
+.diag-answer::before{
+  content:"";position:absolute;left:16px;top:50%;width:16px;height:16px;margin-top:-8px;
+  border:1.5px solid var(--ink-soft);border-radius:50%;background:var(--surface);
+}
+.diag-answers.multi .diag-answer::before{border-radius:3px}
+.diag-answer:hover{border-color:var(--ink)}
+.diag-answer[aria-pressed="true"]{border-color:var(--ink);background:var(--surface)}
+.diag-answer[aria-pressed="true"]::before{background:var(--ink);border-color:var(--ink);box-shadow:inset 0 0 0 3px var(--surface)}
+.diag-nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:24px}
+.diag-nav .btn{min-height:48px}
+.diag-nav .btn[disabled]{opacity:.45;cursor:not-allowed}
+
+/* résultat */
+.diag-level{
+  border:1px solid var(--line);border-left:5px solid var(--lvl,var(--ink-soft));border-radius:var(--r);
+  background:var(--paper);padding:16px 18px;margin-bottom:18px;
+}
+.diag-level:focus{outline:none}
+.diag-level:focus-visible{outline:2.5px solid var(--ink);outline-offset:3px}
+.diag-level strong{display:block;font-family:var(--display);font-size:clamp(24px,3.4vw,34px);letter-spacing:-.02em;line-height:1.1}
+.diag-level p{margin:6px 0 0;font-size:15px}
+.lvl-en_retard{--lvl:var(--hot)}
+.lvl-a_preparer{--lvl:var(--pending)}
+.lvl-en_bonne_voie{--lvl:var(--live)}
+.lvl-non_concerne{--lvl:var(--ink-soft)}
+.diag-msg{font-size:15px;border-left:3px solid var(--pending);padding:2px 0 2px 12px;margin:0 0 12px}
+.diag-result h3{font-size:clamp(19px,2vw,22px);margin:28px 0 10px}
+
+.diag-obl,.diag-actions{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.diag-obl li,.diag-actions li{padding:14px 0;border-bottom:1px solid var(--line)}
+.diag-obl .head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 14px}
+.diag-obl .name,.diag-actions .name{font-weight:600;color:var(--ink)}
+.diag-obl p,.diag-actions p{font-size:14.5px;margin:4px 0 0}
+.diag-obl a{color:var(--ink-soft)}
+.diag-actions{counter-reset:act}
+.diag-actions li{counter-increment:act;padding-left:34px;position:relative}
+.diag-actions li::before{content:counter(act);position:absolute;left:0;top:14px;font-family:var(--mono);font-size:13px;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center}
+
+.etat{
+  display:inline-flex;align-items:center;gap:7px;white-space:nowrap;
+  font-family:var(--mono);font-size:12.5px;color:var(--ink);
+  border:1px solid color-mix(in srgb,var(--c) 45%,var(--line));
+  background:color-mix(in srgb,var(--c) 10%,var(--surface));
+  border-radius:100px;padding:3px 10px;
+}
+.etat::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c)}
+.etat-fait{--c:var(--live)}
+.etat-a_faire,.etat-a_verifier{--c:var(--pending)}
+.etat-en_retard{--c:var(--hot)}
+
+.diag-note{font-size:13.5px;color:var(--ink-soft)}
+.diag-note a{color:inherit}
+.diag-result .diag-note{margin-top:20px}
+.diag-nojs p{margin:0}
+
+@media (max-width:520px){
+  .diag-nav .btn,.diag-result .cta-row .btn{flex:1 1 100%;text-align:center}
+}
+.diag h3,.diag-level{scroll-margin-top:90px}
