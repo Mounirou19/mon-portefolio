@@ -15,6 +15,14 @@
     en_bonne_voie: 'L’essentiel est en place. Il reste quelques points à vérifier.',
     non_concerne: 'La facture électronique vise les entreprises et les indépendants établis en France.'
   };
+  var CONTACT = {
+    neutre: 'Une question sur votre situation ? Parlons-en.',
+    en_retard: 'Vous êtes en retard sur un point : voyons-le ensemble.',
+    a_preparer: 'Vous avez encore du temps : préparons la suite ensemble.',
+    en_bonne_voie: 'Vous êtes en bonne voie. Un doute sur un point précis ?',
+    non_concerne: 'A priori pas concerné ? Un doute, écrivez-moi.'
+  };
+  var PROMESSE = 'Je vous réponds sous 24 h en semaine avec mon avis sur votre situation.';
   var reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var $ = function (id) { return document.getElementById(id); };
   var vues = { intro: $('diag-intro'), question: $('diag-question'), resultat: $('diag-result') };
@@ -113,6 +121,8 @@
   }
 
   function demarrer() {
+    mesurer('diagnostic-demarre');
+    majContact(null);
     etat = { reponses: {}, etape: 0 };
     montrerQuestion(0, true);
   }
@@ -177,8 +187,45 @@
     note.push(REGLES.messages.avertissement);
     $('diag-warning').textContent = note.join(' ');
 
-    if (nouveau) amener(niveau);
+    majContact(r);
+    if (nouveau) {
+      mesurer('diagnostic-termine', { niveau: r.niveau });
+      amener(niveau);
+    }
     return r;
+  }
+
+  /* ---- formulaire de contact : titre adapté et champs cachés lus par /main.js ---- */
+  function champ(nom) { var f = $('cform'); return f && f.elements[nom]; }
+
+  function resumer(r) {
+    var lignes = ['Réponses :'];
+    questions().forEach(function (q) {
+      var v = etat.reponses[q.id];
+      if (v === undefined) return;
+      var txt = q.multiple ? v.map(function (x) { return libelleReponse(q, x); }).join(', ') : libelleReponse(q, v);
+      lignes.push('- ' + q.texte + ' ' + txt);
+    });
+    lignes.push('', 'Résultat : ' + REGLES.niveaux[r.niveau]);
+    if (r.horsChamp) lignes.push('- ' + REGLES.messages.horsChamp);
+    r.obligations.forEach(function (o) {
+      lignes.push('- ' + REGLES.obligations[o.id].libelle + ' : ' + REGLES.etats[o.etat] + ' (échéance ' + dateLongue(o.echeance) + ')');
+    });
+    if (r.incertains.length) lignes.push('Points incertains : ' + r.incertains.join(', '));
+    if (r.actions.length) lignes.push('Actions proposées : ' + r.actions.map(function (a) { return REGLES.actions[a.id]; }).join(' ; '));
+    return lignes.join('\n');
+  }
+
+  function majContact(r) {
+    $('contact-titre').textContent = r ? CONTACT[r.niveau] : CONTACT.neutre;
+    $('contact-texte').textContent = PROMESSE + (r ? ' Vos réponses au questionnaire seront jointes à votre message.' : '');
+    if (champ('niveau')) champ('niveau').value = r ? REGLES.niveaux[r.niveau] : '';
+    if (champ('diagnostic')) champ('diagnostic').value = r ? resumer(r) : '';
+  }
+
+  /* track() est défini par /main.js (chargé avant) ; Umami peut manquer : jamais bloquant. */
+  function mesurer(nom, donnees) {
+    try { if (typeof track === 'function') track(nom, donnees); } catch (e) {}
   }
 
   /* ---- branchements ---- */
