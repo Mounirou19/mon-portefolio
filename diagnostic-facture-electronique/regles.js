@@ -112,7 +112,7 @@ var REGLES = {
     },
     emission: {
       libelle: 'Émettre des factures électroniques',
-      explication: 'Vos factures à des professionnels en France doivent partir en format électronique par une plateforme agréée. Un PDF envoyé par e-mail ne suffit plus.',
+      explication: 'Vos factures à des professionnels en France doivent partir en format électronique par une plateforme agréée. Un PDF envoyé par e-mail ne suffira plus à partir de cette échéance.',
       source: 'economie'
     },
     ereporting: {
