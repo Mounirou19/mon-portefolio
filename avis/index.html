@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Avis clients | Mounirou Cissé</title>
+<meta name="description" content="Les avis de mes clients, publiés avec leur accord et avec la mention « vérifié » ou « non vérifié ». Règle de modération claire, avis négatifs conservés.">
+<link rel="canonical" href="https://mouniroucisse.fr/avis/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://mouniroucisse.fr/avis/">
+<meta property="og:title" content="Avis clients | Mounirou Cissé">
+<meta property="og:description" content="Les avis de mes clients, publiés avec leur accord et avec la mention « vérifié » ou « non vérifié ». Règle de modération claire, avis négatifs conservés.">
+<meta property="og:image" content="https://mouniroucisse.fr/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="/" class="mark">Mounirou Cissé<span>.</span></a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="/#offres">Prestations</a>
+      <a href="/#projets">Réalisations</a>
+      <a href="/#methode">Méthode</a>
+      <a href="/#apropos">À propos</a>
+      <a href="/blog/">Conseils</a>
+      <a href="/plans/">Plans</a>
+      <a href="/avis/">Avis</a>
+      <a href="/#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero page">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><a href="/">Accueil</a> › Avis</nav>
+      <h1>Avis de mes clients</h1>
+      <p class="lede">Ces avis sont publiés avec l'accord écrit de leurs auteurs. Chacun indique s'il a été vérifié ou non. Je ne les note pas moi-même et je ne propose aucune contrepartie pour en obtenir.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="avis-grid" id="avis-list"></div>
+      <noscript><p>Activez JavaScript pour afficher les avis.</p></noscript>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap avis-rules" id="regles">
+      <h2>Comment sont gérés les avis</h2>
+      <h3>Collecte</h3>
+      <ul>
+        <li>Je sollicite tous mes clients après la livraison, pas seulement ceux que je pense satisfaits.</li>
+        <li>Aucune contrepartie (remise, cadeau, paiement) n'est offerte en échange d'un avis.</li>
+      </ul>
+      <h3>Vérification</h3>
+      <ul>
+        <li><strong>Client vérifié</strong> : j'ai contrôlé que l'auteur a bien un devis ou une facture avec moi. Je ne rends pas ce contrôle public.</li>
+        <li><strong>Avis non vérifié</strong> : je n'ai pas pu confirmer que l'auteur est un client. Il est indiqué comme tel.</li>
+      </ul>
+      <h3>Publication et modération</h3>
+      <ul>
+        <li>Tous les avis sont publiés, y compris les négatifs, avec la date de l'avis.</li>
+        <li>Je refuse uniquement : le spam, les propos illégaux (injure, diffamation, données personnelles de tiers), les avis hors sujet, et ceux dont l'auteur n'est pas client.</li>
+        <li>Je ne modifie jamais un avis sans l'accord de son auteur. Je peux y répondre publiquement.</li>
+        <li>Les avis sont conservés tant que leur auteur ne demande pas leur retrait, et au maximum 3 ans.</li>
+      </ul>
+      <h3>Signalement et retrait</h3>
+      <ul>
+        <li>Pour signaler un avis, ou retirer le vôtre à tout moment : <a href="mailto:admin@mouniroucisse.fr?subject=Avis">admin@mouniroucisse.fr</a>. Le retrait est effectué sans justification.</li>
+      </ul>
+      <p><a href="/mentions-legales.html#donnees">Données personnelles et mentions légales</a></p>
+    </div>
+  </section>
+
+  <!-- DÉPÔT D'AVIS -->
+  <section class="sec contact" id="contact">
+    <div class="wrap">
+      <h2>Vous avez travaillé avec moi ? Laissez votre avis.</h2>
+      <p style="margin-top:16px;max-width:52ch">Votre avis sera relu puis publié tel quel, sauf motif de refus indiqué ci-dessus. Votre e-mail sert uniquement à vérifier que vous êtes client. Il n'est jamais publié.</p>
+      <form class="cform" id="cform" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="1e90bb98-832b-46aa-9f76-d436bba213b8">
+        <input type="hidden" name="subject" value="Nouvel avis client depuis mouniroucisse.fr">
+        <input type="hidden" name="from_name" value="Portfolio mouniroucisse.fr">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+        <div class="row">
+          <label>Nom à afficher<input type="text" name="name" required autocomplete="name" placeholder="Ex. : Sophie M."></label>
+          <label>E-mail (non publié)<input type="email" name="email" required autocomplete="email"></label>
+        </div>
+        <div class="row">
+          <label>Entreprise (facultatif)<input type="text" name="entreprise" autocomplete="organization"></label>
+          <label>Projet réalisé<input type="text" name="projet" required placeholder="Ex. : site vitrine"></label>
+        </div>
+        <label>Note
+          <select name="note" required>
+            <option value="" selected disabled>Choisir</option>
+            <option value="5">5 sur 5</option>
+            <option value="4">4 sur 5</option>
+            <option value="3">3 sur 5</option>
+            <option value="2">2 sur 5</option>
+            <option value="1">1 sur 5</option>
+          </select>
+        </label>
+        <label>Votre avis<textarea name="message" required></textarea></label>
+        <label class="consent"><input type="checkbox" name="consentement_publication" value="oui" required><span>J'autorise la publication de mon nom, de mon entreprise (si indiquée) et de mon avis sur mouniroucisse.fr. Je peux retirer mon accord à tout moment en écrivant à admin@mouniroucisse.fr.</span></label>
+        <button class="btn" type="submit">Envoyer mon avis</button>
+        <p class="legal">Ces informations servent uniquement à vérifier et publier votre avis. <a href="/mentions-legales.html#donnees">Données personnelles et mentions légales</a></p>
+        <p class="fstatus" id="fstatus" role="status" aria-live="polite"></p>
+      </form>
+      <p style="margin:30px 0 8px">
+        <a class="mail" id="mail" href="mailto:admin@mouniroucisse.fr">admin@mouniroucisse.fr</a>
+        <span class="copied" id="copied">Copié</span>
+      </p>
+      <div class="cta-row">
+        <button class="btn ghost" id="copy">Copier l'adresse</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<footer class="wrap">
+  <span>© 2026 Mounirou Cissé — Développeur web freelance, Île-de-France</span>
+  <span><a href="/creation-site-vitrine/">Site vitrine</a> · <a href="/application-web-sur-mesure/">Application web</a> · <a href="/automatisation-n8n/">Automatisation n8n</a> · <a href="/maintenance-site-web/">Maintenance</a> · <a href="/diagnostic-facture-electronique/">Diagnostic facture électronique</a> · <a href="/blog/">Conseils</a> · <a href="/avis/">Avis</a> · <a href="/mentions-legales.html">Mentions légales</a></span>
+</footer>
+
+<script src="/avis/avis-data.js" defer></script>
+<script src="/avis/avis.js" defer></script>
+<script src="/main.js" defer></script>
+</body>
+</html>
