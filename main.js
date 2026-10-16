@@ -102,6 +102,17 @@ document.getElementById('copy')?.addEventListener('click', async () => {
 
 /* ---- formulaire de contact ---- */
 const form = document.getElementById('cform'), fstatus = document.getElementById('fstatus');
+
+/* pré-remplissage depuis la page Plans : ?commande=Nom ou ?alerte=Nom */
+if (form) {
+  const q = new URLSearchParams(location.search);
+  const plan = (q.get('commande') || q.get('alerte') || '').slice(0, 120);
+  if (plan) {
+    const objet = (q.has('commande') ? 'Commande : ' : 'Me prévenir à la sortie : ') + plan;
+    form.querySelector('[name=subject]').value = objet;
+    form.querySelector('[name=message]').value = objet + '\n\n';
+  }
+}
 form?.addEventListener('submit', async e => {
   e.preventDefault();
   const btn = form.querySelector('button');

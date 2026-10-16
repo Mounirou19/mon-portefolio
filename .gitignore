@@ -3,3 +3,5 @@ graphify-out/
 .gitattributes
 CAHIER_DES_CHARGES.md
 CLAUDE.md
+note.txt
+.DS_Store
