@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automatiser la relance de vos devis : mode d'emploi | Mounirou Cissé</title>
+<meta name="description" content="Un devis sans réponse est une vente en suspens. Voici comment automatiser vos relances avec n8n, quelles étapes prévoir et ce qu'il faut garder à la main.">
+<link rel="canonical" href="https://mouniroucisse.fr/blog/automatiser-relance-devis/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://mouniroucisse.fr/blog/automatiser-relance-devis/">
+<meta property="og:title" content="Automatiser la relance de vos devis : mode d'emploi | Mounirou Cissé">
+<meta property="og:description" content="Un devis sans réponse est une vente en suspens. Voici comment automatiser vos relances avec n8n, quelles étapes prévoir et ce qu'il faut garder à la main.">
+<meta property="og:image" content="https://mouniroucisse.fr/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Automatiser la relance de vos devis : mode d'emploi",
+    "description": "Un devis sans réponse est une vente en suspens. Voici comment automatiser vos relances avec n8n, quelles étapes prévoir et ce qu'il faut garder à la main.",
+    "url": "https://mouniroucisse.fr/blog/automatiser-relance-devis/",
+    "datePublished": "2026-10-18",
+    "dateModified": "2026-10-18",
+    "inLanguage": "fr-FR",
+    "mainEntityOfPage": "https://mouniroucisse.fr/blog/automatiser-relance-devis/",
+    "author": {
+      "@type": "Person",
+      "name": "Mounirou Cissé",
+      "url": "https://mouniroucisse.fr/",
+      "image": "https://mouniroucisse.fr/img/photo.jpg"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Mounirou Cissé",
+      "url": "https://mouniroucisse.fr/",
+      "image": "https://mouniroucisse.fr/img/photo.jpg"
+    },
+    "image": "https://mouniroucisse.fr/img/og.jpg"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Accueil",
+        "item": "https://mouniroucisse.fr/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Conseils",
+        "item": "https://mouniroucisse.fr/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Automatiser la relance de devis",
+        "item": "https://mouniroucisse.fr/blog/automatiser-relance-devis/"
+      }
+    ]
+  }
+]
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="/" class="mark">Mounirou Cissé<span>.</span></a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="/#offres">Prestations</a>
+      <a href="/#projets">Réalisations</a>
+      <a href="/#methode">Méthode</a>
+      <a href="/#apropos">À propos</a>
+      <a href="/blog/">Conseils</a>
+      <a href="/plans/">Plans</a>
+      <a href="/#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <article class="sec article">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><a href="/">Accueil</a> › <a href="/blog/">Conseils</a> › Automatiser la relance de devis</nav>
+      <header class="art-head">
+        <h1>Automatiser la relance de vos devis : mode d'emploi</h1>
+        <p class="lede">Beaucoup de devis ne sont pas refusés : ils sont oubliés, par vous comme par le client. Une relance bien placée en sauve une bonne part, à condition qu'elle parte sans que vous y pensiez.</p>
+        <div class="byline">
+          <img src="/img/photo.jpg" alt="" width="40" height="40">
+          <span>Par <strong>Mounirou Cissé</strong>, développeur web freelance · <time datetime="2026-10-18">18 octobre 2026</time> · 3 min de lecture</span>
+        </div>
+      </header>
+
+      <div class="art-body">
+        <h2 id="pourquoi-relancer">Pourquoi relancer</h2>
+
+        <p>Un client qui ne répond pas à un devis n'a pas forcément dit non. Il a pu l'ouvrir, se dire « je regarde ça demain », puis l'oublier. Une relance courte et polie, quelques jours plus tard, remet le sujet en haut de sa liste.</p>
+
+        <p>Le problème est de le faire <strong>systématiquement</strong>. Quand on est occupé, la relance est la première tâche à sauter, et elle ne se fait jamais le jour où elle serait utile. C'est exactement le genre de tâche qu'on peut confier à un outil.</p>
+
+        <h2 id="le-principe-d-une-relance-automatique">Le principe d'une relance automatique</h2>
+
+        <p>Le scénario est simple. Chaque devis envoyé crée une ligne dans un suivi (un tableur ou un outil de gestion). Un automate surveille ce suivi et agit selon l'état de la ligne :</p>
+
+        <ol>
+          <li><strong>Un devis est envoyé</strong> : une ligne est ajoutée avec le nom du client, son e-mail, le montant, la date d'envoi et le statut « envoyé ».</li>
+          <li><strong>Au bout de quelques jours sans réponse</strong> : un premier e-mail de relance part automatiquement.</li>
+          <li><strong>Au bout d'une semaine de plus</strong> : une seconde relance, plus courte, propose un échange téléphonique.</li>
+          <li><strong>Si le client répond ou signe</strong> : vous passez le statut à « accepté » ou « refusé », et les relances s'arrêtent d'elles-mêmes.</li>
+          <li><strong>Si rien ne se passe</strong> : l'automate vous prévient pour que vous décidiez de la suite, plutôt que d'insister à l'infini.</li>
+        </ol>
+
+        <h2 id="ce-qu-il-faut-prevoir">Ce qu'il faut prévoir</h2>
+
+        <p>Un scénario de ce type avec un outil comme <a href="/automatisation-n8n/">n8n</a> tient en quelques étapes :</p>
+
+        <ul>
+          <li><strong>Un déclencheur</strong> : une vérification quotidienne du suivi (chaque matin, par exemple).</li>
+          <li><strong>Un filtre</strong> : ne garder que les devis « envoyés » depuis plus de N jours et jamais relancés.</li>
+          <li><strong>L'envoi de l'e-mail</strong>, depuis votre propre adresse pour que le client réponde à vous.</li>
+          <li><strong>La mise à jour du suivi</strong> : noter la date de relance pour ne pas relancer deux fois.</li>
+          <li><strong>Une alerte</strong> pour vous si une étape échoue : un e-mail qui ne part pas ne doit pas passer inaperçu.</li>
+        </ul>
+
+        <h2 id="ce-qu-on-garde-a-la-main">Ce qu'on garde à la main</h2>
+
+        <p>Tout n'a pas intérêt à être automatisé :</p>
+
+        <ul>
+          <li><strong>Le texte du premier devis</strong> et le premier contact : c'est là que se joue la relation.</li>
+          <li><strong>Les gros comptes</strong> : un devis important mérite un appel, pas un e-mail automatique.</li>
+          <li><strong>La décision finale</strong> : l'outil signale, c'est vous qui tranchez.</li>
+        </ul>
+
+        <p>Des relances automatiques mal réglées peuvent agacer : gardez un ton humain, un message court, et ne dépassez pas deux relances.</p>
+
+        <h2 id="le-texte-d-une-bonne-relance">Le texte d'une bonne relance</h2>
+
+        <p>Une bonne relance est brève, personnelle et facile à répondre :</p>
+
+        <ul>
+          <li>elle <strong>rappelle</strong> le devis (numéro, objet, montant) ;</li>
+          <li>elle pose <strong>une seule question</strong> : « Avez-vous eu le temps de le regarder ? » ;</li>
+          <li>elle propose une <strong>suite simple</strong> : répondre à l'e-mail ou fixer un court appel.</li>
+        </ul>
+
+        <h2 id="ce-que-ca-coute">Ce que ça coûte</h2>
+
+        <p>Pour une automatisation de ce type, mes tarifs se situent <a href="/automatisation-n8n/">entre 300 et 1 500 € selon la complexité</a>, prix fixé avant de commencer. Elle se rentabilise dès qu'elle fait aboutir un seul devis qui serait resté sans réponse.</p>
+
+        <h2 id="pour-commencer-sans-outil">Pour commencer sans outil</h2>
+
+        <p>Avant d'automatiser, vous pouvez déjà tester l'idée à la main : tenir un tableau de suivi avec la date d'envoi de chaque devis, et bloquer un créneau fixe chaque semaine pour relancer ceux qui n'ont pas répondu. Si cette habitude vous fait gagner des ventes, l'automatiser est l'étape suivante.</p>
+
+        <h2>À lire aussi</h2>
+        <ul>
+          <li><a href="/blog/facture-electronique-calendrier-pme/">Facture électronique : le calendrier 2026-2027 pour les PME</a></li>
+        </ul>
+
+        <aside class="art-cta">
+          <h2>Une relance qui part toute seule ?</h2>
+          <p>Je mets en place ce type d'automatisation sur vos outils (devis, e-mail, tableur, CRM). Décrivez ce que vous refaites à la main, je vous dis ce qui est automatisable.</p>
+          <a class="btn" href="#contact">Parler de mon besoin</a>
+        </aside>
+      </div>
+    </div>
+  </article>
+
+  <!-- CONTACT -->
+  <section class="sec contact" id="contact">
+    <div class="wrap">
+      <h2>Une relance qui part toute seule ?</h2>
+      <p style="margin-top:16px;max-width:52ch">Réponse sous 24 h en semaine. Décrivez votre besoin en quelques lignes, je vous dis ce qui est faisable, en combien de temps et pour quel prix.</p>
+      <form class="cform" id="cform" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="1e90bb98-832b-46aa-9f76-d436bba213b8">
+        <input type="hidden" name="subject" value="Nouveau message depuis mouniroucisse.fr (Article automatiser-relance-devis)">
+        <input type="hidden" name="from_name" value="Portfolio mouniroucisse.fr">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+        <div class="row">
+          <label>Nom<input type="text" name="name" required autocomplete="name"></label>
+          <label>E-mail<input type="email" name="email" required autocomplete="email"></label>
+        </div>
+        <label>Votre projet en quelques mots<textarea name="message" required placeholder="Ex. : j'envoie mes devis par e-mail et je ne relance jamais, comment faire partir une relance au bout de 5 jours ?"></textarea></label>
+        <button class="btn" type="submit">Envoyer le message</button>
+        <p class="legal">Vos informations servent uniquement à vous répondre et ne sont jamais transmises à des tiers. <a href="/mentions-legales.html">Données personnelles et mentions légales</a></p>
+        <p class="fstatus" id="fstatus" role="status" aria-live="polite"></p>
+      </form>
+      <p style="margin:30px 0 8px">
+        <a class="mail" id="mail" href="mailto:admin@mouniroucisse.fr">admin@mouniroucisse.fr</a>
+        <span class="copied" id="copied">Copié</span>
+      </p>
+      <div class="cta-row">
+        <button class="btn ghost" id="copy">Copier l'adresse</button>
+        <a class="btn ghost" href="https://www.linkedin.com/in/mounirou-cisse-a86a4a1a1/" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="https://www.malt.fr/profile/mouniroucisse" rel="noopener">Malt</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>© 2026 Mounirou Cissé — Développeur web freelance, Île-de-France</span>
+  <span><a href="/creation-site-vitrine/">Site vitrine</a> · <a href="/application-web-sur-mesure/">Application web</a> · <a href="/automatisation-n8n/">Automatisation n8n</a> · <a href="/maintenance-site-web/">Maintenance</a> · <a href="/diagnostic-facture-electronique/">Diagnostic facture électronique</a> · <a href="/blog/">Conseils</a> · <a href="/mentions-legales.html">Mentions légales</a></span>
+</footer>
+
+<script src="/main.js" defer></script>
+</body>
+</html>
