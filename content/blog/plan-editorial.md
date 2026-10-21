@@ -11,7 +11,7 @@ Statut : `todo` → `publié` (avec la date). La tâche de publication prend la 
 | 2 | referencement-local-site-vitrine | Référencement local : être trouvé sur Google près de chez soi | référencement local site vitrine | Site vitrine | publié 2026-10-18 |
 | 3 | automatiser-relance-devis | Automatiser la relance de vos devis | automatiser relance devis | Automatisation n8n | publié 2026-10-18 |
 | 4 | facture-electronique-auto-entrepreneur | Facture électronique : que doit faire un auto-entrepreneur ? | facture électronique auto-entrepreneur | Diagnostic facture électronique | publié 2026-10-19 |
-| 5 | choisir-plateforme-agreee-facture-electronique | Comment choisir sa plateforme agréée de facturation électronique | plateforme agréée facture électronique choisir | Diagnostic facture électronique | todo |
+| 5 | choisir-plateforme-agreee-facture-electronique | Comment choisir sa plateforme agréée de facturation électronique | plateforme agréée facture électronique choisir | Diagnostic facture électronique | publié 2026-10-21 |
 | 6 | e-reporting-facture-electronique | E-reporting : à qui s'applique-t-il et que transmettre ? | e-reporting facturation électronique | Diagnostic facture électronique | todo |
 | 7 | choisir-nom-de-domaine | Comment choisir son nom de domaine (et ne pas le regretter) | choisir un nom de domaine | Site vitrine | todo |
 | 8 | wordpress-ou-site-sur-mesure | WordPress ou site sur mesure : lequel choisir pour son activité ? | wordpress ou site sur mesure | Site vitrine / Maintenance | todo |
