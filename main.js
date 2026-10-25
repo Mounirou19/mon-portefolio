@@ -131,7 +131,7 @@ form?.addEventListener('submit', async e => {
     fstatus.textContent = 'Merci, votre message est bien parti. Je vous réponds sous 24 h en semaine.';
   } catch (err) {
     fstatus.className = 'fstatus err';
-    fstatus.textContent = "L'envoi a échoué. Écrivez-moi directement à admin@mouniroucisse.fr.";
+    fstatus.textContent = "L'envoi a échoué. Écrivez-moi directement à contact@mouniroucisse.fr.";
   }
   btn.disabled = false;
 });
