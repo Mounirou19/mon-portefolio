@@ -15,7 +15,7 @@ Statut : `todo` → `publié` (avec la date). La tâche de publication prend la 
 | 6 | e-reporting-facture-electronique | E-reporting : à qui s'applique-t-il et que transmettre ? | e-reporting facturation électronique | Diagnostic facture électronique | publié 2026-10-23 |
 | 7 | choisir-nom-de-domaine | Comment choisir son nom de domaine (et ne pas le regretter) | choisir un nom de domaine | Site vitrine | publié 2026-10-26 |
 | 8 | wordpress-ou-site-sur-mesure | WordPress ou site sur mesure : lequel choisir pour son activité ? | wordpress ou site sur mesure | Site vitrine / Maintenance | publié 2026-10-28 |
-| 9 | que-mettre-sur-un-site-vitrine | Que mettre sur son site vitrine : les pages et les textes qui convertissent | contenu site vitrine | Site vitrine | todo |
+| 9 | que-mettre-sur-un-site-vitrine | Que mettre sur son site vitrine : les pages et les textes qui convertissent | contenu site vitrine | Site vitrine | publié 2026-10-30 |
 | 10 | mentions-legales-site-vitrine | Mentions légales d'un site : ce qui est obligatoire | mentions légales obligatoires site web | Site vitrine | todo |
 | 11 | bandeau-cookies-site-vitrine | Bandeau cookies : un site vitrine en a-t-il vraiment besoin ? | bandeau cookies obligatoire site vitrine | Site vitrine | todo |
 | 12 | site-web-lent-comment-accelerer | Site lent : les causes fréquentes et comment l'accélérer | site web lent accélérer | Maintenance et performance | todo |
