@@ -17,7 +17,7 @@ Statut : `todo` → `publié` (avec la date). La tâche de publication prend la 
 | 8 | wordpress-ou-site-sur-mesure | WordPress ou site sur mesure : lequel choisir pour son activité ? | wordpress ou site sur mesure | Site vitrine / Maintenance | publié 2026-10-28 |
 | 9 | que-mettre-sur-un-site-vitrine | Que mettre sur son site vitrine : les pages et les textes qui convertissent | contenu site vitrine | Site vitrine | publié 2026-10-30 |
 | 10 | mentions-legales-site-vitrine | Mentions légales d'un site : ce qui est obligatoire | mentions légales obligatoires site web | Site vitrine | publié 2026-11-02 |
-| 11 | bandeau-cookies-site-vitrine | Bandeau cookies : un site vitrine en a-t-il vraiment besoin ? | bandeau cookies obligatoire site vitrine | Site vitrine | todo |
+| 11 | bandeau-cookies-site-vitrine | Bandeau cookies : un site vitrine en a-t-il vraiment besoin ? | bandeau cookies obligatoire site vitrine | Site vitrine | publié 2026-11-04 |
 | 12 | site-web-lent-comment-accelerer | Site lent : les causes fréquentes et comment l'accélérer | site web lent accélérer | Maintenance et performance | todo |
 | 13 | duree-creation-site-vitrine | Combien de temps faut-il pour créer un site vitrine ? | délai création site vitrine | Site vitrine | todo |
 | 14 | choisir-freelance-developpeur-web | Comment choisir un développeur web freelance : 8 questions à poser | choisir un freelance développeur web | Toutes | todo |
