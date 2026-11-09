@@ -19,7 +19,7 @@ Statut : `todo` → `publié` (avec la date). La tâche de publication prend la 
 | 10 | mentions-legales-site-vitrine | Mentions légales d'un site : ce qui est obligatoire | mentions légales obligatoires site web | Site vitrine | publié 2026-11-02 |
 | 11 | bandeau-cookies-site-vitrine | Bandeau cookies : un site vitrine en a-t-il vraiment besoin ? | bandeau cookies obligatoire site vitrine | Site vitrine | publié 2026-11-04 |
 | 12 | site-web-lent-comment-accelerer | Site lent : les causes fréquentes et comment l'accélérer | site web lent accélérer | Maintenance et performance | publié 2026-11-06 |
-| 13 | duree-creation-site-vitrine | Combien de temps faut-il pour créer un site vitrine ? | délai création site vitrine | Site vitrine | todo |
+| 13 | duree-creation-site-vitrine | Combien de temps faut-il pour créer un site vitrine ? | délai création site vitrine | Site vitrine | publié 2026-11-09 |
 | 14 | choisir-freelance-developpeur-web | Comment choisir un développeur web freelance : 8 questions à poser | choisir un freelance développeur web | Toutes | todo |
 | 15 | cahier-des-charges-site-web | Cahier des charges d'un site web : modèle et erreurs à éviter | cahier des charges site web | Site vitrine / Application | todo |
 | 16 | refaire-son-site-quand | Quand faut-il refaire son site web ? | refonte site web quand | Refonte et maintenance | todo |
