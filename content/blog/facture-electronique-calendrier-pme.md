@@ -1,5 +1,6 @@
 ---
 title: Facture électronique : le calendrier 2026-2027 pour les PME
+seotitle: Facture électronique : calendrier 2026-2027 PME
 slug: facture-electronique-calendrier-pme
 description: Facture électronique : dates de réception et d'émission selon la taille de l'entreprise, e-reporting, plateforme agréée, sanctions et premières étapes.
 breadcrumb: Facture électronique : calendrier

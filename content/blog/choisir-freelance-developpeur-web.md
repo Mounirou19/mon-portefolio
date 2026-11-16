@@ -1,5 +1,6 @@
 ---
 title: Choisir un développeur web freelance : 8 questions à poser
+seotitle: Choisir un développeur web freelance : 8 questions
 slug: choisir-freelance-developpeur-web
 description: Propriété du code, accès, devis, attestation de vigilance, RGPD : les 8 questions à poser avant de confier votre site à un développeur web freelance.
 breadcrumb: Choisir un développeur web freelance

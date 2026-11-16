@@ -1,5 +1,6 @@
 ---
 title: Site lent : les causes fréquentes et comment l'accélérer
+seotitle: Site web lent : causes et solutions | Mounirou Cissé
 slug: site-web-lent-comment-accelerer
 description: Site web lent ? Les trois indicateurs de Google à mesurer, les causes les plus fréquentes (images, scripts, serveur) et les corrections qui comptent vraiment.
 breadcrumb: Site lent : causes et solutions

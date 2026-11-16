@@ -1,5 +1,6 @@
 ---
 title: Que mettre sur son site vitrine : les pages et textes essentiels
+seotitle: Que mettre sur un site vitrine : pages essentielles
 slug: que-mettre-sur-un-site-vitrine
 description: Quelles pages et quels textes pour un site vitrine ? Structure minimale, mentions légales obligatoires et erreurs de contenu à éviter pour être contacté.
 breadcrumb: Que mettre sur son site vitrine

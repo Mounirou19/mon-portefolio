@@ -15,7 +15,8 @@ Les articles sont des fichiers Markdown dans `content/blog/`. Le script `scripts
 
 ```
 ---
-title: Titre de l'article (65 caractères maximum)
+title: Titre de l'article (titre affiché, le <h1>)
+seotitle: Titre pour Google, 60 caractères maximum, mot-clé en premier (balise <title> et og:title)
 slug: identique-au-nom-du-fichier
 description: Résumé pour Google, 70 à 160 caractères
 breadcrumb: Libellé court pour le fil d'Ariane
@@ -29,6 +30,8 @@ cta_label: Texte du bouton
 placeholder: "Exemple de message dans le formulaire"
 ---
 ```
+
+`seotitle` est la balise `<title>` complète : elle ne reçoit pas le suffixe « | Mounirou Cissé » automatiquement. Sans `seotitle`, le titre devient `title | Mounirou Cissé`, ce qui dépasse 60 caractères dès que `title` en fait plus de 43 : le build affiche alors un avertissement. Au-delà de 60 caractères, Google tronque le titre dans les résultats.
 
 ## Syntaxe Markdown acceptée
 

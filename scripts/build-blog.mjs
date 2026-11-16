@@ -218,7 +218,8 @@ for (const p of posts) {
   if (seen.has(meta.slug)) errors.push(`${file} : slug en double`);
   seen.add(meta.slug);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(meta.date || '')) errors.push(`${file} : date invalide (AAAA-MM-JJ attendu)`);
-  if ((meta.title || '').length > 65) warnings.push(`${file} : titre long (${meta.title.length} car., 65 max conseillé)`);
+  const pageTitle = meta.seotitle || `${meta.title || ''} | Mounirou Cissé`;
+  if (pageTitle.length > 60) warnings.push(`${file} : balise <title> de ${pageTitle.length} caractères (60 max) : ajouter un champ « seotitle » de 60 caractères ou moins`);
   const dl = (meta.description || '').length;
   if (dl < 70 || dl > 160) warnings.push(`${file} : description de ${dl} caractères (70 à 160 conseillé)`);
 }
@@ -268,7 +269,7 @@ for (const a of all.filter(x => x.post)) {
     : '';
 
   const modified = meta.modified && meta.modified !== meta.date ? ` · mis à jour le <time datetime="${meta.modified}">${dateFr(meta.modified)}</time>` : '';
-  const page = head({ title: `${meta.title} | Mounirou Cissé`, desc: meta.description, url, type: 'article', ld }) + `  <article class="sec article">
+  const page = head({ title: meta.seotitle || `${meta.title} | Mounirou Cissé`, desc: meta.description, url, type: 'article', ld }) + `  <article class="sec article">
     <div class="wrap">
       <nav class="crumbs" aria-label="Fil d'Ariane"><a href="/">Accueil</a> › <a href="/blog/">Conseils</a> › ${esc(meta.breadcrumb)}</nav>
       <header class="art-head">

@@ -1,5 +1,6 @@
 ---
 title: WordPress ou site sur mesure : lequel choisir pour son activité ?
+seotitle: WordPress ou site sur mesure : que choisir ?
 slug: wordpress-ou-site-sur-mesure
 description: WordPress ou site sur mesure ? Comparaison concrète pour un indépendant ou une PME : autonomie, sécurité, maintenance, évolutivité et critères pour trancher.
 breadcrumb: WordPress ou site sur mesure

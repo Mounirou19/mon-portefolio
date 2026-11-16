@@ -1,5 +1,6 @@
 ---
 title: Mentions légales d'un site : ce qui est obligatoire
+seotitle: Mentions légales d'un site : ce qui est obligatoire
 slug: mentions-legales-site-vitrine
 description: Mentions légales d'un site professionnel : informations à afficher selon votre statut, hébergeur, données personnelles et sanctions encourues.
 breadcrumb: Mentions légales d'un site

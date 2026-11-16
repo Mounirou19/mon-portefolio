@@ -1,5 +1,6 @@
 ---
 title: Bandeau cookies : un site vitrine en a-t-il vraiment besoin ?
+seotitle: Bandeau cookies sur un site vitrine : obligatoire ?
 slug: bandeau-cookies-site-vitrine
 description: Bandeau cookies et site vitrine : quels traceurs exigent votre consentement, lesquels en sont exemptés, et comment recueillir un choix conforme à la CNIL.
 breadcrumb: Bandeau cookies d'un site vitrine

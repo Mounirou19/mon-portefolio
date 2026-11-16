@@ -1,5 +1,6 @@
 ---
 title: Comment choisir sa plateforme agréée de facture électronique
+seotitle: Choisir sa plateforme agréée facture électronique
 slug: choisir-plateforme-agreee-facture-electronique
 description: Plateforme agréée de facturation électronique : ce qu'elle fait, liste officielle, solution compatible, questions à poser et erreurs à éviter pour bien choisir.
 breadcrumb: Choisir sa plateforme agréée
