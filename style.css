@@ -194,7 +194,7 @@ dl{margin:0}
 /* ---------- méthode ---------- */
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .steps li{background:var(--surface);padding:clamp(18px,2.5vw,26px)}
-.steps .n-step{color:var(--ink-soft)}
+.steps .n-step{color:var(--ink-soft);opacity:1}
 .steps h3{margin-bottom:8px}
 .steps p{font-size:14.5px;color:var(--ink-soft);margin:0}
 

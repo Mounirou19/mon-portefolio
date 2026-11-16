@@ -71,6 +71,8 @@ Avant de signer, vous devriez disposer d'un devis détaillé, d'une clause sur l
 
 Ces questions ne sont pas un procès d'intention : un bon prestataire y répond volontiers, puisqu'elles protègent aussi son travail. Cet article ne remplace pas un conseil juridique ; pour un contrat à enjeu, faites-le relire par un professionnel du droit.
 
+Pour savoir comment je travaille et à quels tarifs, voir la page [développeur web freelance](/developpeur-web-freelance/).
+
 ## Sources
 
 - [Légifrance, Code de la propriété intellectuelle, article L131-3 (consulté le 11 novembre 2026)](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006278958)
