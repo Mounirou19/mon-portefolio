@@ -1,5 +1,6 @@
 ---
 title: Combien de temps faut-il pour créer un site vitrine ?
+seotitle: Durée de création d'un site vitrine | Mounirou Cissé
 slug: duree-creation-site-vitrine
 description: De 1 semaine à 3 mois : ce qui fait varier le délai d'un site vitrine, étape par étape, et pourquoi les textes et photos sont la cause de retard la plus citée.
 breadcrumb: Durée de création d'un site vitrine

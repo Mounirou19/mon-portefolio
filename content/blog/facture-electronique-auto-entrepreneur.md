@@ -1,5 +1,6 @@
 ---
 title: Facture électronique : que doit faire un auto-entrepreneur ?
+seotitle: Facture électronique auto-entrepreneur : que faire ?
 slug: facture-electronique-auto-entrepreneur
 description: Auto-entrepreneur et facture électronique : réception dès 2026, émission en septembre 2027, franchise de TVA, clients particuliers et amendes.
 breadcrumb: Facture électronique : auto-entrepreneur

@@ -1,5 +1,6 @@
 ---
 title: Automatiser la relance de vos devis : mode d'emploi
+seotitle: Automatiser la relance de vos devis | Mounirou Cissé
 slug: automatiser-relance-devis
 description: Un devis sans réponse est une vente en suspens. Voici comment automatiser vos relances avec n8n, quelles étapes prévoir et ce qu'il faut garder à la main.
 breadcrumb: Automatiser la relance de devis

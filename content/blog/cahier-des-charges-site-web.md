@@ -1,5 +1,6 @@
 ---
 title: Cahier des charges d'un site web : modèle et erreurs à éviter
+seotitle: Cahier des charges site web : modèle | Mounirou Cissé
 slug: cahier-des-charges-site-web
 description: Les six rubriques d'un cahier des charges de site web, un modèle à remplir en une page et les erreurs qui font déraper devis, délais et budget.
 breadcrumb: Cahier des charges d'un site web

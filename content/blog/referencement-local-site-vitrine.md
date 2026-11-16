@@ -1,5 +1,6 @@
 ---
 title: Référencement local : être trouvé sur Google près de chez soi
+seotitle: Référencement local : être trouvé près de chez soi
 slug: referencement-local-site-vitrine
 description: Artisan, commerçant, indépendant : les 6 actions qui font apparaître votre activité sur Google dans votre ville, de la fiche Google à la page de votre site.
 breadcrumb: Référencement local

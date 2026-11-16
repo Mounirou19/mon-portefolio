@@ -1,5 +1,6 @@
 ---
 title: Comment choisir son nom de domaine (et ne pas le regretter)
+seotitle: Comment choisir son nom de domaine | Mounirou Cissé
 slug: choisir-nom-de-domaine
 description: .fr ou .com, nom court, titulaire, renouvellement, marques : les points à vérifier avant d'acheter le nom de domaine de votre site, sans mauvaise surprise.
 breadcrumb: Choisir son nom de domaine

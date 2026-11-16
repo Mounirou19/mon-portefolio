@@ -1,5 +1,6 @@
 ---
 title: E-reporting : qui est concerné et que faut-il transmettre ?
+seotitle: E-reporting facture électronique : qui est concerné ?
 slug: e-reporting-facture-electronique
 description: E-reporting de la facturation électronique : ventes aux particuliers et à l'étranger, données à transmettre, fréquences selon le régime de TVA, sanctions.
 breadcrumb: E-reporting : qui, quoi, quand
