@@ -24,7 +24,7 @@ Statut : `todo` → `publié` (avec la date). La tâche de publication prend la 
 | 15 | cahier-des-charges-site-web | Cahier des charges d'un site web : modèle et erreurs à éviter | cahier des charges site web | Site vitrine / Application | publié 2026-11-13 |
 | 16 | refaire-son-site-quand | Quand faut-il refaire son site web ? | refonte site web quand | Refonte et maintenance | publié 2026-11-16 |
 | 17 | maintenance-site-web-prix | Maintenance de site web : ce qu'elle comprend et combien elle coûte | maintenance site web prix | Maintenance | publié 2026-11-18 |
-| 18 | site-web-auto-entrepreneur | Un auto-entrepreneur a-t-il besoin d'un site web ? | site web auto-entrepreneur | Site vitrine | todo |
+| 18 | site-web-auto-entrepreneur | Un auto-entrepreneur a-t-il besoin d'un site web ? | site web auto-entrepreneur | Site vitrine | publié 2026-11-20 |
 | 19 | google-business-profile-guide | Fiche Google Business Profile : le guide pas à pas | fiche google business profile | Site vitrine (référencement local) | todo |
 | 20 | automatiser-taches-repetitives-pme | 7 tâches répétitives qu'une PME peut automatiser dès maintenant | automatiser tâches répétitives PME | Automatisation n8n | todo |
 | 21 | n8n-zapier-make-comparatif | n8n, Zapier ou Make : quel outil d'automatisation choisir ? | n8n zapier make comparatif | Automatisation n8n | todo |
