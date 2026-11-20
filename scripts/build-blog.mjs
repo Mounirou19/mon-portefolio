@@ -184,9 +184,12 @@ const contact = ({ heading, subject, placeholder }) => `
         <span class="copied" id="copied">Copié</span>
       </p>
       <div class="cta-row">
+        <a class="btn" href="mailto:contact@mouniroucisse.fr?subject=Projet%20web">Écrire un mail</a>
         <button class="btn ghost" id="copy">Copier l'adresse</button>
         <a class="btn ghost" href="https://www.linkedin.com/in/mounirou-cisse-a86a4a1a1/" rel="noopener">LinkedIn</a>
         <a class="btn ghost" href="https://www.malt.fr/profile/mouniroucisse" rel="noopener">Malt</a>
+        <a class="btn ghost" href="https://github.com/Mounirou19" rel="noopener">GitHub</a>
+        <a class="btn ghost" href="https://www.instagram.com/mounirou6c/" rel="noopener">Instagram</a>
       </div>
     </div>
   </section>
