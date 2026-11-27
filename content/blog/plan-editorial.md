@@ -27,7 +27,7 @@ Statut : `todo` → `publié` (avec la date). La tâche de publication prend la 
 | 18 | site-web-auto-entrepreneur | Un auto-entrepreneur a-t-il besoin d'un site web ? | site web auto-entrepreneur | Site vitrine | publié 2026-11-20 |
 | 19 | google-business-profile-guide | Fiche Google Business Profile : le guide pas à pas | fiche google business profile | Site vitrine (référencement local) | publié 2026-11-23 |
 | 20 | automatiser-taches-repetitives-pme | 7 tâches répétitives qu'une PME peut automatiser dès maintenant | automatiser tâches répétitives PME | Automatisation n8n | publié 2026-11-25 |
-| 21 | n8n-zapier-make-comparatif | n8n, Zapier ou Make : quel outil d'automatisation choisir ? | n8n zapier make comparatif | Automatisation n8n | todo |
+| 21 | n8n-zapier-make-comparatif | n8n, Zapier ou Make : quel outil d'automatisation choisir ? | n8n zapier make comparatif | Automatisation n8n | publié 2026-11-27 |
 | 22 | formulaire-vers-google-sheets-crm | Envoyer automatiquement les demandes d'un formulaire vers un tableur ou un CRM | formulaire vers google sheets automatique | Automatisation n8n | todo |
 | 23 | ia-pme-cas-usage-concrets | L'IA pour une PME : cinq cas d'usage concrets (et ce qui ne marche pas) | IA pour PME cas d'usage | Automatisation / Application | todo |
 | 24 | logiciel-sur-mesure-ou-saas | Logiciel sur mesure ou abonnement : comment décider ? | logiciel sur mesure ou saas | Application web | todo |
